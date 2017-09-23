@@ -50,7 +50,7 @@ app.put('/charinfo/:id', function (req, res) {
   });
 });
 
-let port = process.env.PORT || 3000;
+let port = 3000 || process.env.PORT;
 
 app.listen(port);
 console.log("Running on " + port.toString());
