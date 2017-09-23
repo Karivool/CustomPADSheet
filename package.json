@@ -1,0 +1,32 @@
+{
+  "name": "Custom PADSheet",
+  "version": "1.0.0",
+  "description": "Create your own custom Puzzle and Dragons character statsheets",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "mongodb": "^2.2.25",
+    "mongojs": "^2.4.0",
+    "webpack": "^1.14.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Karivool/CustomPADSheet.git"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "author": "Pizza Lady",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Karivool/CustomPADSheet/issues"
+  },
+  "homepage": "https://github.com/Karivool/CustomPADSheet#readme"
+}
