@@ -1,0 +1,5 @@
+{
+	"undefined": "localhost/custompad",
+	"dev": "localhost/custompad_dev",
+	"prod": "localhost/custompad_prod"
+}
