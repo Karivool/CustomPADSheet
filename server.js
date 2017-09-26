@@ -1,7 +1,7 @@
 let express = require('express');
 let mongojs = require('mongojs');
 let app = express();
-let db = mongojs('mongodb', ['padsheet']);
+let db = mongojs('mongodb', ['custompad']);
 let bodyParser = require('body-parser');
 
 app.use(express.static(__dirname + "/public"));
