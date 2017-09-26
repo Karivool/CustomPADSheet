@@ -1,0 +1,22 @@
+elements:
+---------
+"fire", "water", "wood", "light", "dark"
+
+type:
+-----
+"god", "devil", "attacker", "physical", "healer",
+"balanced", "machine", "dragon", "evo", "enhance",
+"awoken", "redeem"
+
+awakenings:
+-----------
+"hp", "atk", "rcv", "fire-res", "water-res",
+"wood-res", "light-res", "dark-res", "heal", "bind-res", "blind", "jammer", "poison", "fire-p",
+"water-p", "wood-p", "light-p", "dark-p", "time",
+"bind-rec", "skill", "fire-r", "water-r", "wood-r",
+"light-r", "dark-r", "tpa", "skill-res", "heart-p",
+"multi", "dragon-k", "god-k", "devil-k", "machine-k",
+"attacker-k", "physical-k", "healer-k", "balanced-k",
+"awoken-k", "enhance-k", "redeem-k", "evo-k",
+"7combo", "guardbreak", "fua", "hp-team", "rcv-team",
+"9orb"

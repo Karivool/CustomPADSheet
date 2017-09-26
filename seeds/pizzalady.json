@@ -1,0 +1,47 @@
+[
+  {
+    "no": 1,
+    "name": "Pizza Lady",
+    "rare": 5,
+    "cost": 25,
+    "el1": "dark", "el2": "",
+    "type1": "devil", "type2": "", "type3": "",
+    "hp": 1220, "atk": 814, "rcv": 221,
+    "leaderttl": "Pizza Pizza!",
+    "leadertxt": "HP 2x",
+    "activettl": "Wanna hear a pun?",
+    "activetxt": "Converts Heart Orbs into Poison Orbs; ATK 2x for 2 turns.",
+    "cooldown": [15, 9],
+    "awakenings": []
+  },
+  {
+    "no": 2,
+    "name": "Saucy Punster, Pizza Lady",
+    "rare": 6,
+    "cost": 35,
+    "el1": "dark", "el2": "",
+    "type1": "devil", "type2": "", "type3": "",
+    "hp": 1810, "atk": 1714, "rcv": 380,
+    "leaderttl": "Wanna Pizza Me?",
+    "leadertxt": "HP 2x, ATK 2x",
+    "activettl": "Wanna hear a pun?",
+    "activetxt": "Converts Heart Orbs into Poison Orbs; ATK 2x for 2 turns",
+    "cooldown": [15, 9],
+    "awakenings": ["dark-p","skill","skill-res","tpa"]
+  },
+  {
+    "no": 3,
+    "name": "",
+    "rare": 1,
+    "cost": 1,
+    "el1": "", "el2": "",
+    "type1": "", "type2": "", "type3": "",
+    "hp": 1, "atk": 1, "rcv": 0,
+    "leaderttl": "",
+    "leadertxt": "",
+    "activettl": "",
+    "activetxt": "",
+    "cooldown": [1, 1],
+    "awakenings": []
+  },
+]
