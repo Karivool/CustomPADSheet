@@ -1,0 +1,1 @@
+//One PAD character entry
