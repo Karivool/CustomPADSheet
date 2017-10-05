@@ -5,24 +5,24 @@ class StatShow extends Component {
   render() {
     return (
       <div className="">
-        <column className="statshow-title">Name</column>
-        <column className="statshow-title">Rarity</column>
-        <column className="statshow-title">Cost</column>
-        <column className="statshow-title">El1</column>
-        <column className="statshow-title">El2</column>
-        <column className="statshow-title">Ty1</column>
-        <column className="statshow-title">Ty2</column>
-        <column className="statshow-title">Ty3</column>
-        <column className="statshow-title">HP</column>
-        <column className="statshow-title">Atk</column>
-        <column className="statshow-title">RCV</column>
-        <column className="statshow-title">Weighted</column>
-        <column className="statshow-title">Leader Skill</column>
-        <column className="statshow-title">Description</column>
-        <column className="statshow-title">Active Skill</column>
-        <column className="statshow-title">Description</column>
-        <column className="statshow-title">Cooldown</column>
-        <column className="statshow-title">Awakenings</column>
+        <div className="statshow-name">Name</div>
+        <div className="statshow-rarity">Rarity</div>
+        <div className="statshow-cost">Cost</div>
+        <div className="statshow-element">El1</div>
+        <div className="statshow-element">El2</div>
+        <div className="statshow-type">Ty1</div>
+        <div className="statshow-type">Ty2</div>
+        <div className="statshow-type">Ty3</div>
+        <div className="statshow-hp">HP</div>
+        <div className="statshow-atk">Atk</div>
+        <div className="statshow-rcv">RCV</div>
+        <div className="statshow-weighted">Weighted</div>
+        <div className="statshow-leader">Leader Skill</div>
+        <div className="statshow-description">Description</div>
+        <div className="statshow-active">Active Skill</div>
+        <div className="statshow-description">Description</div>
+        <div className="statshow-cooldown">Cooldown</div>
+        <div className="statshow-awakenings">Awakenings</div>
       </div>
     )
   }
