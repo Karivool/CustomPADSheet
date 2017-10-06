@@ -5,6 +5,8 @@ class StatForm extends Component {
   render() {
     return (
       <div className="">
+        Add New Character:
+        
       </div>
     )
   }
