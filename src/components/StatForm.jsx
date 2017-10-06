@@ -1,7 +1,7 @@
-//Moving modal to toggle edit/delete
+// Create a new character from here
 import React, { Component } from 'react';
 
-class StatEdit extends Component {
+class StatForm extends Component {
   render() {
     return (
       <div className="">
@@ -10,4 +10,4 @@ class StatEdit extends Component {
   }
 }
 
-export default StatEdit;
+export default StatForm;
