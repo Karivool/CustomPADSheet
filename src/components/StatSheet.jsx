@@ -1,14 +1,25 @@
 //The main life blood of the app
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
 import StatEmpty from './StatEmpty';
 import StatLine from './StatLine';
 import StatShow from './StatShow';
 
-class StatSheet extends Component {
-  reqChar() {
-    return [];
-  };
+import { reqChar } from '../actions/char_actions.js';
 
+const mapStateToProps = state => {
+  return {
+    ...state
+  }
+}
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+
+}, dispatch);
+
+class StatSheet extends Component {
   render() {
     const characters = [];
     const charsIsEmpty = characters.length === 0;
@@ -24,7 +35,7 @@ class StatSheet extends Component {
 
               if (info.data === undefined) {
                 let infoCharacters = {charName: info.charName};
-                this.reqChar(infoCharacters, info.charName);
+                reqChar(infoCharacters, info.charName);
               } else {
                 return (<StatLine key={idx} idx={idx} info={info}/>);
               }

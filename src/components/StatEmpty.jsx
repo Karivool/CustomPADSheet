@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class StatEmpty extends Component {
   render() {
     return (
-      <div className="">
+      <div className="stat-empty">
         Empty! Use the form to add some characters!
       </div>
     )

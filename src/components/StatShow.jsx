@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 class StatShow extends Component {
   render() {
     return (
-      <div className="">
+      <div className="statshow-bar">
         <div className="statshow-name">Name</div>
         <div className="statshow-rarity">Rarity</div>
         <div className="statshow-cost">Cost</div>
