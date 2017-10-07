@@ -27,11 +27,63 @@ class StatForm extends Component {
           Name: <input type="text" value={this.state.name} onChange={this.handleChange} className="statform-form-text"/><br/>
         Rarity: <input type="text" value={this.state.rarity} onChange={this.handleChange} className="statform-form-number"/>
       Cost: <input type="text" value={this.state.cost} onChange={this.handleChange} className="statform-form-number"/><br/>
-          Element1: <input type="text" value={this.state.el1} onChange={this.handleChange} className="statform-form-number"/>
-        Element2: <input type="text" value={this.state.el2} onChange={this.handleChange} className="statform-form-number"/><br/>
-          Type1: <input type="text" value={this.state.type1} onChange={this.handleChange} className="statform-form-number"/>
-          Type2: <input type="text" value={this.state.type2} onChange={this.handleChange} className="statform-form-number"/>
-        Type3: <input type="text" value={this.state.type3} onChange={this.handleChange} className="statform-form-number"/><br/>
+    Element1: <select className="statform-form-element" onChange={this.handleChange}>
+            <option value={ this.state.el1 }>Fire</option>
+            <option value={ this.state.el1 }>Water</option>
+            <option value={ this.state.el1 }>Wood</option>
+            <option value={ this.state.el1 }>Light</option>
+            <option value={ this.state.el1 }>Dark</option></select>
+        Element2:<select className="statform-form-element" onChange={this.handleChange}>
+          <option value={ this.state.el1 }></option>
+          <option value={ this.state.el1 }>Fire</option>
+          <option value={ this.state.el1 }>Water</option>
+          <option value={ this.state.el1 }>Wood</option>
+          <option value={ this.state.el1 }>Light</option>
+          <option value={ this.state.el1 }>Dark</option></select><br/>
+          Type1: <select className="statform-form-type" onChange={this.handleChange}>
+            <option value={ this.state.type1 }>Attacker</option>
+            <option value={ this.state.type1 }>Balanced</option>
+            <option value={ this.state.type1 }>Devil</option>
+            <option value={ this.state.type1 }>Dragon</option>
+            <option value={ this.state.type1 }>Healer</option>
+            <option value={ this.state.type1 }>God</option>
+            <option value={ this.state.type1 }>Machine</option>
+            <option value={ this.state.type1 }>Physical</option>
+            <option value={ this.state.type1 }>Awakening Material</option>
+            <option value={ this.state.type1 }>Evo Material</option>
+            <option value={ this.state.type1 }>Enhanced Material</option>
+            <option value={ this.state.type1 }>Redeemable Material</option>
+            </select><br/>
+          Type2: <select className="statform-form-type" onChange={this.handleChange}>
+            <option value={ this.state.type1 }></option>
+            <option value={ this.state.type1 }>Attacker</option>
+            <option value={ this.state.type1 }>Balanced</option>
+            <option value={ this.state.type1 }>Devil</option>
+            <option value={ this.state.type1 }>Dragon</option>
+            <option value={ this.state.type1 }>Healer</option>
+            <option value={ this.state.type1 }>God</option>
+            <option value={ this.state.type1 }>Machine</option>
+            <option value={ this.state.type1 }>Physical</option>
+            <option value={ this.state.type1 }>Awakening Material</option>
+            <option value={ this.state.type1 }>Evo Material</option>
+            <option value={ this.state.type1 }>Enhanced Material</option>
+            <option value={ this.state.type1 }>Redeemable Material</option>
+            </select><br/>
+          Type3: <select className="statform-form-type" onChange={this.handleChange}>
+          <option value={ this.state.type1 }></option>
+          <option value={ this.state.type1 }>Attacker</option>
+          <option value={ this.state.type1 }>Balanced</option>
+          <option value={ this.state.type1 }>Devil</option>
+          <option value={ this.state.type1 }>Dragon</option>
+          <option value={ this.state.type1 }>Healer</option>
+          <option value={ this.state.type1 }>God</option>
+          <option value={ this.state.type1 }>Machine</option>
+          <option value={ this.state.type1 }>Physical</option>
+          <option value={ this.state.type1 }>Awakening Material</option>
+          <option value={ this.state.type1 }>Evo Material</option>
+          <option value={ this.state.type1 }>Enhanced Material</option>
+          <option value={ this.state.type1 }>Redeemable Material</option>
+          </select><br/>
           HP: <input type="text" value={this.state.hp} onChange={this.handleChange} className="statform-form-number"/>
           ATK: <input type="text" value={this.state.atk} onChange={this.handleChange} className="statform-form-number"/>
         RCV: <input type="text" value={this.state.rcv} onChange={this.handleChange} className="statform-form-number"/><br/>
