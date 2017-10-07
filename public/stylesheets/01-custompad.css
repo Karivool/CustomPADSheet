@@ -6,3 +6,32 @@
   padding-right: 5px;
   border: 2px solid;
 }
+
+.statshow-bar {
+  display: inline-flex;
+  white-space: nowrap;
+}
+
+.stat-empty {
+  display: inline-flex;
+  white-space: nowrap;
+  padding-left: 386px;
+  padding-right: 385px;
+  border: 2px solid;
+  text-align: center;
+}
+
+.statform-formbox {
+  float:right;
+  width: 350px;
+}
+
+.statform-form-text {
+  border: 1px solid;
+  width: 200px;
+}
+
+.statform-form-number {
+  border: 1px solid;
+  width: 30px;
+}
