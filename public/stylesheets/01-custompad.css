@@ -8,6 +8,8 @@
 }
 
 .statshow-bar {
+  position: fixed;
+  top: 320px;
   display: inline-flex;
   white-space: nowrap;
 }
@@ -22,8 +24,9 @@
 }
 
 .statform-formbox {
-  float:right;
-  width: 350px;
+  float:left;
+  width: 300px;
+  padding-bottom: 20px;
 }
 
 .statform-form-text {
@@ -33,5 +36,15 @@
 
 .statform-form-number {
   border: 1px solid;
-  width: 30px;
+  width: 40px;
+}
+
+.statform-form-element {
+  border: 1px solid;
+  width: 60px;
+}
+
+.statform-form-type {
+  border: 1px solid;
+  width: 180px;
 }
