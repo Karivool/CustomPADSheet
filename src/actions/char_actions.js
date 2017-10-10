@@ -1,4 +1,4 @@
-import { getChar } from '../util/char_util.js';
+import { receiveChar } from '../util/statform_util.js';
 
 export const GET_ALL_CHARS = "GET_ALL_CHARS";
 export const GET_CHAR = "GET_CHAR";
@@ -8,8 +8,8 @@ export const CLOSE_CHAR_DETAIL = "CLOSE_CHAR_DETAIL";
 export const EDIT_CHARS = "EDIT_CHARS";
 export const STOP_EDITING = "STOP_EDITING";
 
-export const reqCity = (coords, charName) => (dispatch) => {
-  return getChar(coords)
+export const reqChar = (coords, charName) => (dispatch) => {
+  return receiveChar(coords)
     .then((data) => dispatch(getChar(coords, charName, data)))
     .catch((error) => console.log(error));
 };
@@ -19,17 +19,17 @@ export const getChar = (coords, charName, data) => ({
   info: {coords, charName, data}
 });
 
-export const levelCity = (idx) => ({
+export const levelChar = (idx) => ({
   type: KILL_CHAR,
   idx: idx
 });
 
-export const seeCityDetail = (info) => ({
+export const seeCharDetail = (info) => ({
   type: SEE_CHAR_DETAIL,
   info: info
 });
 
-export const closeCityDetail = () => ({
+export const closeCharDetail = () => ({
   type: CLOSE_CHAR_DETAIL,
 });
 
