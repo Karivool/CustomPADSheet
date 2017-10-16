@@ -25,8 +25,8 @@ class StatForm extends Component {
         Add New Character:
         <form onSubmit={this.handleSubmit}>
           Name: <input type="text" value={this.state.name} onChange={this.handleChange} className="statform-form-text"/><br/>
-        Rarity: <input type="text" value={this.state.rarity} onChange={this.handleChange} className="statform-form-number"/>
-      Cost: <input type="text" value={this.state.cost} onChange={this.handleChange} className="statform-form-number"/><br/>
+        Rarity: <input type="text" maxLength="2" value={this.state.rarity} onChange={this.handleChange} className="statform-form-number"/>
+      Cost: <input type="text" maxLength="3" value={this.state.cost} onChange={this.handleChange} className="statform-form-number"/><br/>
     Element1: <select className="statform-form-element" onChange={this.handleChange}>
             <option value={ this.state.el1 }>Fire</option>
             <option value={ this.state.el1 }>Water</option>
@@ -84,9 +84,9 @@ class StatForm extends Component {
           <option value={ this.state.type1 }>Enhanced Material</option>
           <option value={ this.state.type1 }>Redeemable Material</option>
           </select><br/>
-          HP: <input type="text" value={this.state.hp} onChange={this.handleChange} className="statform-form-number"/>
-          ATK: <input type="text" value={this.state.atk} onChange={this.handleChange} className="statform-form-number"/>
-        RCV: <input type="text" value={this.state.rcv} onChange={this.handleChange} className="statform-form-number"/><br/>
+        HP: <input type="text" maxLength="5" value={this.state.hp} onChange={this.handleChange} className="statform-form-number"/>
+      ATK: <input type="text" maxLength="5" value={this.state.atk} onChange={this.handleChange} className="statform-form-number"/>
+    RCV: <input type="text" maxLength="5" value={this.state.rcv} onChange={this.handleChange} className="statform-form-number"/><br/>
       Leader Skill: <input type="text" value={this.state.leader} onChange={this.handleChange} className="statform-form-text"/><br/>
       Description: <input type="text" value={this.state.leaderdesc} onChange={this.handleChange} className="statform-form-text"/><br/>
     Active Skill: <input type="text" value={this.state.active} onChange={this.handleChange} className="statform-form-text"/><br/>
