@@ -2,8 +2,10 @@
 .statshow-type, .statshow-hp, .statshow-atk, .statshow-rcv, .statshow-weighted,
 .statshow-leader, .statshow-description, .statshow-active, .statshow-cooldown, .statshow-awakenings {
   float: left;
+  padding-top: 1px;
   padding-left: 5px;
   padding-right: 5px;
+  padding-bottom: 1px;
   border: 2px solid;
 }
 
@@ -25,18 +27,18 @@
 
 .statform-formbox {
   float:left;
-  width: 300px;
+  width: 490px;
   padding-bottom: 20px;
 }
 
 .statform-form-text {
   border: 1px solid;
-  width: 200px;
+  width: 390px;
 }
 
 .statform-form-number {
   border: 1px solid;
-  width: 40px;
+  width: 42px;
 }
 
 .statform-form-element {
