@@ -15,7 +15,7 @@ class StatForm extends Component {
   }
 
   handleSubmit(event) {
-    alert(this.state.value);
+    console.log(this.state.value);
     event.preventDefault();
   }
 
@@ -25,21 +25,21 @@ class StatForm extends Component {
         Add New Character:
         <form onSubmit={this.handleSubmit}>
           Name: <input type="text" value={this.state.name} onChange={this.handleChange} className="statform-form-text"/><br/>
-        Rarity: <input type="text" maxLength="2" value={this.state.rarity} onChange={this.handleChange} className="statform-form-number"/>
-      Cost: <input type="text" maxLength="3" value={this.state.cost} onChange={this.handleChange} className="statform-form-number"/><br/>
-    Element1: <select className="statform-form-element" onChange={this.handleChange}>
+          Rarity: <input type="text" maxLength="2" value={this.state.rarity} onChange={this.handleChange} className="statform-form-number"/>
+          Cost: <input type="text" maxLength="3" value={this.state.cost} onChange={this.handleChange} className="statform-form-number"/><br/>
+          Element1: <select className="statform-form-element" onChange={this.handleChange}>
+            <option value={ this.state.el1 } data-image="/images/1_fire.png">Fire</option>
+            <option value={ this.state.el1 } data-image="/images/2_water.png">Water</option>
+            <option value={ this.state.el1 } data-image="/images/3_wood.png">Wood</option>
+            <option value={ this.state.el1 } data-image="/images/4_light.png">Light</option>
+            <option value={ this.state.el1 } data-image="/images/5_dark.png">Dark</option></select>
+          Element2:<select className="statform-form-element" onChange={this.handleChange}>
+            <option value={ this.state.el1 }></option>
             <option value={ this.state.el1 }>Fire</option>
             <option value={ this.state.el1 }>Water</option>
             <option value={ this.state.el1 }>Wood</option>
             <option value={ this.state.el1 }>Light</option>
-            <option value={ this.state.el1 }>Dark</option></select>
-        Element2:<select className="statform-form-element" onChange={this.handleChange}>
-          <option value={ this.state.el1 }></option>
-          <option value={ this.state.el1 }>Fire</option>
-          <option value={ this.state.el1 }>Water</option>
-          <option value={ this.state.el1 }>Wood</option>
-          <option value={ this.state.el1 }>Light</option>
-          <option value={ this.state.el1 }>Dark</option></select><br/>
+            <option value={ this.state.el1 }>Dark</option></select><br/>
           Type1: <select className="statform-form-type" onChange={this.handleChange}>
             <option value={ this.state.type1 }>Attacker</option>
             <option value={ this.state.type1 }>Balanced</option>
@@ -70,28 +70,28 @@ class StatForm extends Component {
             <option value={ this.state.type1 }>Redeemable Material</option>
             </select><br/>
           Type3: <select className="statform-form-type" onChange={this.handleChange}>
-          <option value={ this.state.type1 }></option>
-          <option value={ this.state.type1 }>Attacker</option>
-          <option value={ this.state.type1 }>Balanced</option>
-          <option value={ this.state.type1 }>Devil</option>
-          <option value={ this.state.type1 }>Dragon</option>
-          <option value={ this.state.type1 }>Healer</option>
-          <option value={ this.state.type1 }>God</option>
-          <option value={ this.state.type1 }>Machine</option>
-          <option value={ this.state.type1 }>Physical</option>
-          <option value={ this.state.type1 }>Awakening Material</option>
-          <option value={ this.state.type1 }>Evo Material</option>
-          <option value={ this.state.type1 }>Enhanced Material</option>
-          <option value={ this.state.type1 }>Redeemable Material</option>
-          </select><br/>
-        HP: <input type="text" maxLength="5" value={this.state.hp} onChange={this.handleChange} className="statform-form-number"/>
-      ATK: <input type="text" maxLength="5" value={this.state.atk} onChange={this.handleChange} className="statform-form-number"/>
-    RCV: <input type="text" maxLength="5" value={this.state.rcv} onChange={this.handleChange} className="statform-form-number"/><br/>
-      Leader Skill: <input type="text" value={this.state.leader} onChange={this.handleChange} className="statform-form-text"/><br/>
-      Description: <input type="text" value={this.state.leaderdesc} onChange={this.handleChange} className="statform-form-text"/><br/>
-    Active Skill: <input type="text" value={this.state.active} onChange={this.handleChange} className="statform-form-text"/><br/>
-  Description: <input type="text" value={this.state.activedesc} onChange={this.handleChange} className="statform-form-text"/><br/>
-Awakenings: <input type="text" value={this.state.awakenings} onChange={this.handleChange} className="statform-form-text"/><br/>
+            <option value={ this.state.type1 }></option>
+            <option value={ this.state.type1 }>Attacker</option>
+            <option value={ this.state.type1 }>Balanced</option>
+            <option value={ this.state.type1 }>Devil</option>
+            <option value={ this.state.type1 }>Dragon</option>
+            <option value={ this.state.type1 }>Healer</option>
+            <option value={ this.state.type1 }>God</option>
+            <option value={ this.state.type1 }>Machine</option>
+            <option value={ this.state.type1 }>Physical</option>
+            <option value={ this.state.type1 }>Awakening Material</option>
+            <option value={ this.state.type1 }>Evo Material</option>
+            <option value={ this.state.type1 }>Enhanced Material</option>
+            <option value={ this.state.type1 }>Redeemable Material</option>
+            </select><br/>
+          HP: <input type="text" maxLength="5" value={this.state.hp} onChange={this.handleChange} className="statform-form-number"/>
+          ATK: <input type="text" maxLength="5" value={this.state.atk} onChange={this.handleChange} className="statform-form-number"/>
+          RCV: <input type="text" maxLength="5" value={this.state.rcv} onChange={this.handleChange} className="statform-form-number"/><br/>
+          Leader Skill: <input type="text" value={this.state.leader} onChange={this.handleChange} className="statform-form-text"/><br/>
+          Description: <input type="text" value={this.state.leaderdesc} onChange={this.handleChange} className="statform-form-text"/><br/>
+          Active Skill: <input type="text" value={this.state.active} onChange={this.handleChange} className="statform-form-text"/><br/>
+          Description: <input type="text" value={this.state.activedesc} onChange={this.handleChange} className="statform-form-text"/><br/>
+          Awakenings: <input type="text" value={this.state.awakenings} onChange={this.handleChange} className="statform-form-text"/><br/>
         <input type="submit" value="Submit" className="statform-submit"/>
         </form>
       </div>
