@@ -10,9 +10,8 @@
 }
 
 .statshow-bar {
-  position: fixed;
-  top: 365px;
-  display: inline-flex;
+  float: left;
+  display: flex;
   white-space: nowrap;
 }
 
@@ -26,8 +25,10 @@
 }
 
 .statform-formbox {
+  display: flex;
+  flex-direction: column;
   float:left;
-  width: 490px;
+  width: max-content;
   padding-bottom: 20px;
 }
 
@@ -49,4 +50,9 @@
 .statform-form-type {
   border: 1px solid;
   width: 180px;
+}
+
+.title {
+  min-width: 400px;
+  max-width: 600px;
 }
