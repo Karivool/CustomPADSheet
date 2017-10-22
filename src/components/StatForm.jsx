@@ -127,19 +127,20 @@ class StatForm extends Component {
           Description: <input type="text" value={this.state.activedesc} onChange={this.handleChange.bind(this, "activedesc")} className="statform-form-text"/><br/>
 
 
-          Awakenings: <select className="statform-form-element" onChange={this.handleChange.bind(this, "aw1")}>
+          Awakenings:
             { options.map((option) => {
-
                 awakenings = [];
-                awakenings.push(<option key={`${option}-0`} value={ this.state.aw1 } ></option>);
+                let select = [];
+                awakenings.push(<option key={`${option}-0`} value={ `this.state.${option}` } ></option>);
                 for (let i = 1; i < 49; i++) {
-                  awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${option}` } data-image={`/images/awakenings/${i}.png`}></option>)
+                  awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${option}` } data-image={`/images/awakenings/${i}.png`}></option>);
                 }
-                return awakenings;
+                select.push(<select key={`${option}-select`} className="statform-form-element" onChange={this.handleChange.bind(this, `${option}`)}>{awakenings}</select>);
+                return (select);
               })
-            };
+            }
 
-          </select><p/>
+          <p/>
         <input type="submit" value="Submit" className="statform-submit"/>
         </form>
       </div>
