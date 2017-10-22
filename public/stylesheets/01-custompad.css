@@ -25,11 +25,15 @@
 }
 
 .statform-formbox {
+  background: aliceblue;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   float:left;
-  width: max-content;
+  margin: 5px;
+  padding: 10px;
   padding-bottom: 20px;
+  width: max-content;
 }
 
 .statform-form-text {
