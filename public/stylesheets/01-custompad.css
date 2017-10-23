@@ -1,35 +1,44 @@
+
 .statshow-name, .statshow-rarity, .statshow-cost, .statshow-element,
 .statshow-type, .statshow-hp, .statshow-atk, .statshow-rcv, .statshow-weighted,
 .statshow-leader, .statshow-description, .statshow-active, .statshow-cooldown, .statshow-awakenings {
+  border: 2px solid;
+  font-family: 'Slabo 27px', serif;
   float: left;
   padding-top: 1px;
   padding-left: 5px;
   padding-right: 5px;
   padding-bottom: 1px;
-  border: 2px solid;
 }
 
 .statshow-bar {
-  float: left;
+  background: steelblue;
+  color: navajowhite;
   display: flex;
+  float: left;
   white-space: nowrap;
 }
 
 .stat-empty {
+  background: yellowgreen;
+  border: 2px solid;
+  color: teal;
   display: inline-flex;
-  white-space: nowrap;
+  font-family: 'Slabo 27px', serif;
   padding-left: 386px;
   padding-right: 385px;
-  border: 2px solid;
   text-align: center;
+  white-space: nowrap;
 }
 
 .statform-formbox {
   background: aliceblue;
+  border: 5px solid cornflowerblue;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   float:left;
+  font-family: 'Slabo 27px', serif;
   margin: 5px;
   padding: 10px;
   padding-bottom: 20px;
@@ -38,12 +47,12 @@
 
 .statform-form-text {
   border: 1px solid;
-  width: 390px;
+  width: 480px;
 }
 
 .statform-form-number {
   border: 1px solid;
-  width: 42px;
+  width: 64px;
 }
 
 .statform-form-element {
@@ -59,4 +68,23 @@
 .title {
   min-width: 400px;
   max-width: 600px;
+}
+
+.statform-form-text, .statform-form-number, .statform-form-element, .statform-form-type {
+  background: steelblue;
+  border-radius: 6px;
+  color: snow;
+  font-family: 'Slabo 27px', serif;
+  margin: 2px 0px;
+  padding: 2px;
+}
+
+.statform-submit {
+  background: lightblue;
+  border: 5px solid cornflowerblue;
+  border-radius: 10px;
+  color: cornflowerblue;
+  font-family: 'Slabo 27px', serif;
+  margin-top: 10px;
+  padding: 5px;
 }
