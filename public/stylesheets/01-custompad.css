@@ -1,9 +1,7 @@
-
 .statshow-name, .statshow-rarity, .statshow-cost, .statshow-element,
 .statshow-type, .statshow-hp, .statshow-atk, .statshow-rcv, .statshow-weighted,
 .statshow-leader, .statshow-description, .statshow-active, .statshow-cooldown, .statshow-awakenings {
   border: 2px solid;
-  font-family: 'Slabo 27px', serif;
   float: left;
   padding-top: 1px;
   padding-left: 5px;
@@ -12,19 +10,20 @@
 }
 
 .statshow-bar {
-  background: steelblue;
-  color: navajowhite;
+  background: #e7f6fd;
+  color: #2f3d7b;
   display: flex;
   float: left;
+  font-family: 'Concert One', cursive;
   white-space: nowrap;
 }
 
 .stat-empty {
-  background: yellowgreen;
-  border: 2px solid;
-  color: teal;
+  background: #e7f6fd;
+  border: 2px solid #2f3d7b;
+  color: #2f3d7b;
   display: inline-flex;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Concert One', cursive;
   padding-left: 386px;
   padding-right: 385px;
   text-align: center;
@@ -32,13 +31,14 @@
 }
 
 .statform-formbox {
-  background: aliceblue;
-  border: 5px solid cornflowerblue;
+  background: #e7f6fd;
+  border: 5px solid #5dabfb;
   border-radius: 10px;
+  color: #2f3d7b;
   display: flex;
   flex-direction: column;
   float:left;
-  font-family: 'Slabo 27px', serif;
+  font-family: 'Concert One', cursive;
   margin: 5px;
   padding: 10px;
   padding-bottom: 20px;
@@ -74,17 +74,16 @@
   background: steelblue;
   border-radius: 6px;
   color: snow;
-  font-family: 'Slabo 27px', serif;
   margin: 2px 0px;
+  margin-left: 6px;
   padding: 2px;
 }
 
 .statform-submit {
   background: lightblue;
-  border: 5px solid cornflowerblue;
+  border: 5px solid #5dabfb;
   border-radius: 10px;
-  color: cornflowerblue;
-  font-family: 'Slabo 27px', serif;
+  color: #	#5dabfb;
   margin-top: 10px;
   padding: 5px;
 }
