@@ -23,6 +23,7 @@ class StatForm extends Component {
       hp: "",
       atk: "",
       rcv: "",
+      weighted: 0,
       leader: "",
       leaderdesc: "",
       active: "",
@@ -39,11 +40,37 @@ class StatForm extends Component {
     });
   }
 
+  calcWeight() {
+    let hp;
+    let atk;
+    let rcv;
+    if (this.state.hp === "") {
+      hp = 0;
+    } else {
+      hp = this.state.hp / 10;
+    }
+    if (this.state.atk === "") {
+      atk = 0;
+    } else {
+      atk = this.state.atk / 5
+    }
+    if (this.state.rcv === "") {
+      rcv = 0;
+    } else {
+      rcv = this.state.rcv / 3
+    }
+    this.setState({
+      weighted: (hp + atk + rcv).toFixed(2),
+    });
+  }
+
   handleChange(property, event) {
     this.setState({
       [property]: event.target.value,
     });
-    console.log(this.state);
+    if (property === "hp" || property === "atk" || property === "rcv") {
+      this.calcWeight();
+    }
   }
 
   handleSubmit(event) {
@@ -59,8 +86,8 @@ class StatForm extends Component {
         Add New Character:
         <form onSubmit={this.handleSubmit}>
           Name: <input type="text" value={this.state.name} onChange={this.handleChange.bind(this, "name")} className="statform-form-text"/><br/>
-          Rarity: <input type="text" maxLength="2" value={this.state.rarity} onChange={this.handleChange.bind(this, "rarity")} className="statform-form-number"/>
-          Cost: <input type="text" maxLength="3" value={this.state.cost} onChange={this.handleChange.bind(this, "cost")} className="statform-form-number"/><br/>
+          Rarity: <input type="number" maxLength="2" value={this.state.rarity} onChange={this.handleChange.bind(this, "rarity")} className="statform-form-number"/>
+          Cost: <input type="number" maxLength="3" value={this.state.cost} onChange={this.handleChange.bind(this, "cost")} className="statform-form-number"/><br/>
           Element1: <select className="statform-form-element" onChange={this.handleChange.bind(this, "el1")}>
             <option value={ this.state.el1 } data-image="/images/1_fire.png"></option>
             <option value={ this.state.el1 } data-image="/images/2_water.png"></option>
@@ -73,7 +100,7 @@ class StatForm extends Component {
             <option value={ this.state.el2 } data-image="/images/2_water.png"></option>
             <option value={ this.state.el2 } data-image="/images/3_wood.png"></option>
             <option value={ this.state.el2 } data-image="/images/4_light.png"></option>
-            <option value={ this.state.el2 } data-image="/images/5_dark.png"></option></select>
+            <option value={ this.state.el2 } data-image="/images/5_dark.png"></option></select><br/>
           Type1: <select className="statform-form-type" onChange={this.handleChange.bind(this, "type1")}>
             <option value={ this.state.type1 }>Attacker</option>
             <option value={ this.state.type1 }>Balanced</option>
@@ -118,9 +145,10 @@ class StatForm extends Component {
             <option value={ this.state.type3 }>Enhanced Material</option>
             <option value={ this.state.type3 }>Redeemable Material</option>
             </select><br/>
-          HP: <input type="text" maxLength="5" value={this.state.hp} onChange={this.handleChange.bind(this, "hp")} className="statform-form-number"/>
-          ATK: <input type="text" maxLength="5" value={this.state.atk} onChange={this.handleChange.bind(this, "atk")} className="statform-form-number"/>
-          RCV: <input type="text" maxLength="5" value={this.state.rcv} onChange={this.handleChange.bind(this, "rcv")} className="statform-form-number"/><br/>
+          HP: <input type="number" maxLength="5" value={this.state.hp} onChange={this.handleChange.bind(this, "hp")} className="statform-form-number"/>
+          ATK: <input type="number" maxLength="5" value={this.state.atk} onChange={this.handleChange.bind(this, "atk")} className="statform-form-number"/>
+          RCV: <input type="number" maxLength="5" value={this.state.rcv} onChange={this.handleChange.bind(this, "rcv")} className="statform-form-number"/>
+          Weighted: {this.state.weighted}<br/>
           Leader Skill: <input type="text" value={this.state.leader} onChange={this.handleChange.bind(this, "leader")} className="statform-form-text"/><br/>
           Description: <input type="text" value={this.state.leaderdesc} onChange={this.handleChange.bind(this, "leaderdesc")} className="statform-form-text"/><br/>
           Active Skill: <input type="text" value={this.state.active} onChange={this.handleChange.bind(this, "active")} className="statform-form-text"/><br/>
