@@ -5,8 +5,8 @@
 .ddcommon {position:relative;display:-moz-inline-stack; zoom:1; display:inline-block; *display:inline; cursor:default;}
 .ddcommon ul{padding:0;margin:0;}
 .ddcommon ul li{list-style-type:none;}
-.borderRadiusTp ul li:last-child{-moz-border-radius:0 0 0px 0px ; border-radius:0 0 0px 0px;border-bottom:0 none #c3c3c3; }
-.borderRadiusBtm ul li:first-child{-moz-border-radius:0px 0px 0 0; border-radius:0px 0px 0 0 ;border-bottom:1 solid #c3c3c3; }
+.borderRadiusTp ul li:last-child{-moz-border-radius:0 0 0px 0px ; border-radius:0 0 0px 0px;border-bottom:0 none #5dabfb; }
+.borderRadiusBtm ul li:first-child{-moz-border-radius:0px 0px 0 0; border-radius:0px 0px 0 0 ;border-bottom:1 solid #5dabfb; }
 
 .ddcommon .disabled img, .ddcommon .disabled span, .ddcommon.disabledAll{
 opacity: .5; /* standard: ff gt 1.5, opera, safari */
@@ -43,8 +43,8 @@ img.fnone{float:none !important}
 .ddcommon .noBorderTop{border-top:none 0  !important; padding:0; margin:0;}
 
 /*************** default theme **********************/
-.dd{border:1px solid #c3c3c3;}
-.dd .divider{border-left:1px solid #c3c3c3; border-right:1px solid #fff;; right:24px;}
+.dd{border:2px solid #5dabfb;}
+.dd .divider{border-left:1px solid #5dabfb; border-right:1px solid #fff;; right:24px;}
 .dd .ddArrow{width:16px;height:16px; margin-top:-8px; background:url(../../images/msdropdown/skin1/dd_arrow.gif) no-repeat;}
 .dd .ddArrow:hover{background-position:0 100%;}
 .dd .ddTitle{color:#000; url(../../images/msdropdown/skin1/title-bg.gif) repeat-x left top;}
@@ -52,8 +52,8 @@ img.fnone{float:none !important}
 .dd .ddTitle .ddTitleText .ddTitleText{padding:0;}
 .dd .ddTitle .description{font-size:12px; color:#666}
 .dd .ddTitle .ddTitleText img{padding-right:1px;}
-.dd .ddChild{border:1px solid #c3c3c3; background-color:#fff; left:-1px;}
-.dd .ddChild li{padding:10px; background-color:#fff; border-bottom:1px solid #c3c3c3;}
+.dd .ddChild{border:1px solid #5dabfb; background-color:#fff; left:-1px;}
+.dd .ddChild li{padding:10px; background-color:#fff; border-bottom:1px solid #5dabfb;}
 .dd .ddChild li .description{color:#666;}
 .dd .ddChild li .ddlabel{color:#333;}
 .dd .ddChild li.hover{background-color:#f2f2f2}
