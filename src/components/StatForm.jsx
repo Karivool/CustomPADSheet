@@ -1,17 +1,12 @@
 // Create a new character from here
 import React, { Component } from 'react';
+import Select from 'react-select';
+import { reduxForm } from 'redux-form';
 
 class StatForm extends Component {
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  componentWillMount() {
-    this.setState({
+    this.state = {
       name: "",
       rarity: "",
       cost: "",
@@ -37,7 +32,10 @@ class StatForm extends Component {
       aw7: "",
       aw8: "",
       aw9: "",
-    });
+    };
+
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   calcWeight() {
@@ -65,7 +63,6 @@ class StatForm extends Component {
   }
 
   handleChange(property, event) {
-    debugger
     this.setState({
       [property]: event.target.value,
     });
@@ -97,14 +94,14 @@ class StatForm extends Component {
           Name: <input type="text" value={this.state.name} onChange={this.handleChange.bind(this, "name")} className="statform-form-text"/><br/>
           Rarity: <input type="number" maxLength="2" value={this.state.rarity} onChange={this.handleChange.bind(this, "rarity")} className="statform-form-number"/>
           Cost: <input type="number" maxLength="3" value={this.state.cost} onChange={this.handleChange.bind(this, "cost")} className="statform-form-number"/><br/>
-          <label>Element1: <select value={ this.state.el1 }className="statform-form-element" onChange={this.handleChange.bind(this, "el1")}>
+        <label>Element1: <select value={ this.state.el1 }className="statform-form-element" onChange={this.handleChange.bind(this, "el1")}>
             <option value="fire" data-image="/images/1_fire.png"></option>
             <option value="water" data-image="/images/2_water.png"></option>
             <option value="wood" data-image="/images/3_wood.png"></option>
             <option value="light" data-image="/images/4_light.png"></option>
             <option value="dark" data-image="/images/5_dark.png"></option></select></label>
           Element2:<select value={ this.state.el2 } className="statform-form-element" onChange={this.handleChange.bind(this, "el2")}>
-            <option value=""></option>
+            <option value="">none</option>
             <option value="fire" data-image="/images/1_fire.png"></option>
             <option value="water" data-image="/images/2_water.png"></option>
             <option value="wood" data-image="/images/3_wood.png"></option>
@@ -125,7 +122,7 @@ class StatForm extends Component {
             <option value="redeem">Redeemable Material</option>
             </select><br/>
           Type2: <select value={ this.state.type2 } className="statform-form-type" onChange={this.handleChange.bind(this, "type2")}>
-            <option value=""></option>
+            <option value="">none</option>
             <option value="attacker">Attacker</option>
             <option value="balanced">Balanced</option>
             <option value="devil">Devil</option>
@@ -140,7 +137,7 @@ class StatForm extends Component {
             <option value="redeem">Redeemable Material</option>
             </select><br/>
           Type3: <select value={ this.state.type3 } className="statform-form-type" onChange={this.handleChange.bind(this, "type3")}>
-            <option value=""></option>
+            <option value="">none</option>
             <option value="attacker">Attacker</option>
             <option value="balanced">Balanced</option>
             <option value="devil">Devil</option>
@@ -170,7 +167,7 @@ class StatForm extends Component {
                 let select = [];
                 awakenings.push(<option key={`${option}-0`} value={ `this.state.${option}` } ></option>);
                 for (let i = 1; i < 49; i++) {
-                  awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${option}` } data-image={`/images/awakenings/${i}.png`}></option>);
+                  awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${awakevalues[i]}` } data-image={`/images/awakenings/${i}.png`}></option>);
                 }
                 select.push(<select key={`${option}-select`} value={ `this.state.${option}` } className="statform-form-element" onChange={this.handleChange.bind(this, `${option}`)}>{awakenings}</select>);
                 return (select);
@@ -185,3 +182,9 @@ class StatForm extends Component {
   }
 }
 export default StatForm;
+
+// export default reduxForm({
+//   form: 'character',
+//   fields: ['name', 'rarity', 'cost', 'el1', 'el2', 'type1', 'type2', 'type3',
+//            'hp', 'atk', 'rcv', 'leader', 'leaderdesc', 'active', 'activedesc',],
+// })(StatForm);
