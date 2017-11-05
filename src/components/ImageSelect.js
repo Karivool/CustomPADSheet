@@ -3,6 +3,8 @@ import createClass from 'create-react-class';
 import PropTypes from 'prop-types';
 import Select from 'react-select';
 
+const AWAKENINGS = require('../constants/awakenings');
+
 const ImageSelectHandle = createClass({
 	propTypes: {
 		children: PropTypes.node,
@@ -92,14 +94,13 @@ const ImageSelect = createClass({
 					arrowRenderer={arrowRenderer}
 					onChange={this.setValue}
 					optionComponent={ImageSelectHandle}
-					options={USERS}
+					options={AWAKENINGS}
 					placeholder={placeholder}
 					value={this.state.value}
 					valueComponent={SelectValue}
 					/>
 				<div className="hint">
-					This example implements custom Option and Value components to render a Gravatar image for each user based on their email.
-					It also demonstrates rendering HTML elements as the placeholder.
+					Select option
 				</div>
 			</div>
 		);
