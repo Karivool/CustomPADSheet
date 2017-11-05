@@ -1,6 +1,7 @@
 // Create a new character from here
 import React, { Component } from 'react';
 import Select from 'react-select';
+import ImageSelect from './ImageSelect';
 import { reduxForm } from 'redux-form';
 
 class StatForm extends Component {
@@ -63,6 +64,7 @@ class StatForm extends Component {
   }
 
   handleChange(property, event) {
+    debugger
     this.setState({
       [property]: event.target.value,
     });
@@ -163,14 +165,11 @@ class StatForm extends Component {
 
           Awakenings:
             { options.map((option) => {
-                awakenings = [];
-                let select = [];
-                awakenings.push(<option key={`${option}-0`} value={ `this.state.${option}` } ></option>);
-                for (let i = 1; i < 49; i++) {
-                  awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${awakevalues[i]}` } data-image={`/images/awakenings/${i}.png`}></option>);
-                }
-                select.push(<select key={`${option}-select`} value={ `this.state.${option}` } className="statform-form-element" onChange={this.handleChange.bind(this, `${option}`)}>{awakenings}</select>);
-                return (select);
+                return (<ImageSelect
+                  key={`${option}-select`}
+                  value={ `${option}`}
+                  onChange={this.handleChange.bind(this, `${option}`)}>
+                </ImageSelect>);
               })
             }
 
@@ -188,3 +187,15 @@ export default StatForm;
 //   fields: ['name', 'rarity', 'cost', 'el1', 'el2', 'type1', 'type2', 'type3',
 //            'hp', 'atk', 'rcv', 'leader', 'leaderdesc', 'active', 'activedesc',],
 // })(StatForm);
+
+// { options.map((option) => {
+//     awakenings = [];
+//     let select = [];
+//     awakenings.push(<option key={`${option}-0`} value={ `this.state.${option}` } ></option>);
+//     for (let i = 1; i < 49; i++) {
+//       awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${awakevalues[i]}` } data-image={`/images/awakenings/${i}.png`}></option>);
+//     }
+//     select.push(<select key={`${option}-select`} value={ `this.state.${option}` } className="statform-form-element" onChange={this.handleChange.bind(this, `${option}`)}>{awakenings}</select>);
+//     return (select);
+//   })
+// }
