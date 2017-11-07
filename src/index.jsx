@@ -9,7 +9,7 @@ import 'react-toolbox/lib/commons.scss';
 
 import routes from './routes';
 
-import App from '.App';
+import App from './App';
 
 const rootDomElement = document.querySelector('.container');
 

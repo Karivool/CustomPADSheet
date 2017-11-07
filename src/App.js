@@ -1,4 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
+import { connect } from 'react-redux';
+
 import MainPage from './components/MainPage';
 
 class App extends Component {
@@ -11,4 +13,8 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  children: PropTypes.node,
+};
+
+export default connect()(App);

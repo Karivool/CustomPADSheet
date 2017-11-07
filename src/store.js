@@ -1,17 +1,11 @@
 import { createStore, applyMiddleware } from 'redux';
-import rootReducer from './reducers/weather.js';
-import createLogger from 'redux-logger';
+import rootReducer from './reducers/index.js';
 import reduxThunk from 'redux-thunk';
 import throttle from 'lodash/throttle';
 
 import { loadState, saveState } from './localStorage';
 
 const middleware = [reduxThunk];
-
-if (process.env.NODE_ENV === 'development') {
-  const logger = createLogger();
-  middleware.push(logger);
-}
 
 const persistedState = loadState();
 

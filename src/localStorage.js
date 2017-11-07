@@ -21,5 +21,5 @@ export const saveState = (state) => {
 };
 
 export const clearState = () => {
-  serializedState = null;
+  const serializedState = null;
 };
