@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 import App from './App';
 import MainPage from './components/MainPage';
-// import registerServiceWorker from './registerServiceWorker';
+import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(
   <Router>
@@ -15,4 +15,4 @@ ReactDOM.render(
   </Router>,
   document.getElementById('root')
 );
-// registerServiceWorker();
+registerServiceWorker();
