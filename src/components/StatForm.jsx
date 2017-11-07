@@ -2,7 +2,15 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import ImageSelect from './ImageSelect';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
+
+import { addChar } from '../actions/char_actions.js';
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  addChar
+}, dispatch);
 
 class StatForm extends Component {
   constructor(props) {
@@ -73,22 +81,21 @@ class StatForm extends Component {
     }
   }
 
+  handleAwakening(property, value) {
+    this.setState({
+      [property]: value,
+    });
+  }
+
   handleSubmit(event) {
     console.log(this.state);
     event.preventDefault();
+    this.props.addChar(this.state);
   }
 
   render() {
     const options = ["aw1","aw2","aw3","aw4","aw5","aw6","aw7","aw8","aw9"];
-    let awakenings = [];
-    let awakevalues = ["", "hp", "atk", "rcv", "fire-res", "water-res", "wood-res",
-    "light-res", "dark-res", "heal", "bind-res", "blind", "jammer", "poison",
-    "fire-p", "water-p", "wood-p", "light-p", "dark-p", "time", "bind-rec",
-    "skill", "fire-r", "water-r", "wood-r", "light-r", "dark-r", "tpa",
-    "skill-res", "heart-p", "multi", "dragon-k", "god-k", "devil-k",
-    "machine-k", "attacker-k", "physical-k", "healer-k", "balanced-k",
-    "awoken-k", "enhance-k", "redeem-k", "evo-k", "7combo", "guardbreak",
-    "fua", "hp-team", "rcv-team", "9orb"]
+
     return (
       <div className="statform-formbox">
         Add New Character:
@@ -97,18 +104,18 @@ class StatForm extends Component {
           Rarity: <input type="number" maxLength="2" value={this.state.rarity} onChange={this.handleChange.bind(this, "rarity")} className="statform-form-number"/>
           Cost: <input type="number" maxLength="3" value={this.state.cost} onChange={this.handleChange.bind(this, "cost")} className="statform-form-number"/><br/>
         <label>Element1: <select value={ this.state.el1 }className="statform-form-element" onChange={this.handleChange.bind(this, "el1")}>
-            <option value="fire" data-image="/images/1_fire.png"></option>
-            <option value="water" data-image="/images/2_water.png"></option>
-            <option value="wood" data-image="/images/3_wood.png"></option>
-            <option value="light" data-image="/images/4_light.png"></option>
-            <option value="dark" data-image="/images/5_dark.png"></option></select></label>
+            <option value="fire">Fire</option>
+            <option value="water">Water</option>
+            <option value="wood">Wood</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option></select></label>
           Element2:<select value={ this.state.el2 } className="statform-form-element" onChange={this.handleChange.bind(this, "el2")}>
             <option value="">none</option>
-            <option value="fire" data-image="/images/1_fire.png"></option>
-            <option value="water" data-image="/images/2_water.png"></option>
-            <option value="wood" data-image="/images/3_wood.png"></option>
-            <option value="light" data-image="/images/4_light.png"></option>
-            <option value="dark" data-image="/images/5_dark.png"></option></select><br/>
+              <option value="fire">Fire</option>
+              <option value="water">Water</option>
+              <option value="wood">Wood</option>
+              <option value="light">Light</option>
+              <option value="dark">Dark</option></select><br/>
           Type1: <select value={ this.state.type1 } className="statform-form-type" onChange={this.handleChange.bind(this, "type1")}>
             <option value="attacker">Attacker</option>
             <option value="balanced">Balanced</option>
@@ -161,18 +168,15 @@ class StatForm extends Component {
           Description:  <input type="text" value={this.state.leaderdesc} onChange={this.handleChange.bind(this, "leaderdesc")} className="statform-form-text"/><br/>
           Active Skill: <input type="text" value={this.state.active} onChange={this.handleChange.bind(this, "active")} className="statform-form-text"/><br/>
           Description:  <input type="text" value={this.state.activedesc} onChange={this.handleChange.bind(this, "activedesc")} className="statform-form-text"/><br/>
-
-
           Awakenings:
             { options.map((option) => {
                 return (<ImageSelect
                   key={`${option}-select`}
-                  value={ `${option}`}
-                  onChange={this.handleChange.bind(this, `${option}`)}>
+                  value={option}
+                  action={this.handleAwakening.bind(this, option)}>
                 </ImageSelect>);
               })
             }
-
           <p/>
         <input type="submit" value="Submit" className="statform-submit"/>
         </form>
@@ -180,22 +184,10 @@ class StatForm extends Component {
     )
   }
 }
-export default StatForm;
+export default connect(null, mapDispatchToProps)(StatForm);
 
 // export default reduxForm({
 //   form: 'character',
 //   fields: ['name', 'rarity', 'cost', 'el1', 'el2', 'type1', 'type2', 'type3',
 //            'hp', 'atk', 'rcv', 'leader', 'leaderdesc', 'active', 'activedesc',],
 // })(StatForm);
-
-// { options.map((option) => {
-//     awakenings = [];
-//     let select = [];
-//     awakenings.push(<option key={`${option}-0`} value={ `this.state.${option}` } ></option>);
-//     for (let i = 1; i < 49; i++) {
-//       awakenings.push(<option key={`${option}-${i}`} value={ `this.state.${awakevalues[i]}` } data-image={`/images/awakenings/${i}.png`}></option>);
-//     }
-//     select.push(<select key={`${option}-select`} value={ `this.state.${option}` } className="statform-form-element" onChange={this.handleChange.bind(this, `${option}`)}>{awakenings}</select>);
-//     return (select);
-//   })
-// }

@@ -77,12 +77,10 @@ var ImageSelect = createClass({
 		};
 	},
 	updateValue (newValue) {
-		debugger
-
-
 		this.setState({
 			selectValue: newValue,
 		});
+		this.props.action(newValue);
 	},
 	toggleCheckbox (e) {
 		let newState = {};
