@@ -14,9 +14,7 @@ const store = createStore(rootReducer, persistedState, enhancer);
 
 store.subscribe(throttle(() => {
   saveState({
-    coords: store.getState().coords,
-    modalOpened: false,
-    data: store.getState().data
+    chars: store.getState().chars
     });
 }, 1000));
 
