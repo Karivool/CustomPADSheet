@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import axios from 'axios';
 
 import StatEmpty from './StatEmpty';
 import StatLine from './StatLine';
@@ -20,6 +21,23 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 class StatSheet extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      chars: []
+    };
+  }
+
+  componentDidMount(){
+    axios.get('http://localhost:3000/chars')
+    .then(response => {
+      this.setState({ chars: response.data });
+    })
+    .catch(function (error) {
+      console.log(error);
+    })
+  }
+
   render() {
     const characters = [];
     const charsIsEmpty = characters.length === 0;

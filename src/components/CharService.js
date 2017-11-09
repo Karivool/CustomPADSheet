@@ -6,7 +6,7 @@ class CharService {
 
   sendData(data) {
     axios.post('http://localhost:3000/chars/add/char', {
-    item: data
+    char: data
   })
   .then(function (response) {
       console.log(response);

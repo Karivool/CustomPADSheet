@@ -1,7 +1,9 @@
 // Create a new character from here
 import React, { Component } from 'react';
 import Select from 'react-select';
+import CharService from './CharService';
 import ImageSelect from './ImageSelect';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { reduxForm } from 'redux-form';
@@ -42,7 +44,7 @@ class StatForm extends Component {
       aw8: "",
       aw9: "",
     };
-
+    this.addCharService = new CharService();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -90,7 +92,10 @@ class StatForm extends Component {
   handleSubmit(event) {
     console.log(this.state);
     event.preventDefault();
-    this.props.addChar(this.state);
+    // this.props.addChar(this.state);
+    this.addCharService.sendData(
+      this.state
+    );
   }
 
   render() {
@@ -191,3 +196,28 @@ export default connect(null, mapDispatchToProps)(StatForm);
 //   fields: ['name', 'rarity', 'cost', 'el1', 'el2', 'type1', 'type2', 'type3',
 //            'hp', 'atk', 'rcv', 'leader', 'leaderdesc', 'active', 'activedesc',],
 // })(StatForm);
+
+// name: this.state.name,
+// rarity: this.state.rarity,
+// cost: this.state.cost,
+// el1: this.state.el1,
+// el2: this.state.el2,
+// type1: this.state.type1,
+// type2: this.state.type2,
+// type3: this.state.type3,
+// hp: this.state.hp,
+// atk: this.state.atk,
+// rcv: this.state.rcv,
+// leader: this.state.leader,
+// leaderdesc: this.state.leaderdesc,
+// active: this.state.active,
+// activedesc: this.state.activedesc,
+// aw1: this.state.aw1,
+// aw2: this.state.aw2,
+// aw3: this.state.aw3,
+// aw4: this.state.aw4,
+// aw5: this.state.aw5,
+// aw6: this.state.aw6,
+// aw7: this.state.aw7,
+// aw8: this.state.aw8,
+// aw9: this.state.aw9
