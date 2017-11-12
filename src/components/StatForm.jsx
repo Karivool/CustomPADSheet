@@ -74,12 +74,12 @@ class StatForm extends Component {
   }
 
   handleChange(property, event) {
-    this.setState({
-      [property]: event.target.value,
-    });
     if (property === "hp" || property === "atk" || property === "rcv") {
       this.calcWeight();
     }
+    this.setState({
+      [property]: event.target.value,
+    });
   }
 
   handleAwakening(property, value) {
