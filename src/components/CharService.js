@@ -1,19 +1,29 @@
 // CharService.js
-
+import React from 'react';
 import axios from 'axios';
 
 class CharService {
 
   sendData(data) {
-    axios.post('http://localhost:3000/chars/add/char', {
+    debugger
+    axios.post('http://localhost:4200/chars/add/post', {
     char: data
   })
-  .then(function (response) {
-      console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  });
+  .then(res => this.setState({ chars: res.data }))
+  .catch(err => console.log(err))
+}
+
+  updateData(data, id){
+    axios.post('http://localhost:4200/chars/update/'+id, {
+      item: data
+    })
+    .then(res => this.setState({ chars: res.data }))
+    .catch(err => console.log(err))
+  }
+
+  deleteData(id){
+    axios.get('http://localhost:4200/chars/delete/'+id)
+    .then().catch(err => console.log(err))
   }
 }
 
