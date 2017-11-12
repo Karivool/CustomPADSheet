@@ -12,7 +12,15 @@
     "activettl": "Wanna hear a pun?",
     "activetxt": "Converts Heart Orbs into Poison Orbs; ATK 2x for 2 turns.",
     "cooldown": [15, 9],
-    "awakenings": []
+    "aw1": "",
+    "aw2": "",
+    "aw3": "",
+    "aw4": "",
+    "aw5": "",
+    "aw6": "",
+    "aw7": "",
+    "aw8": "",
+    "aw9": "",
   },
   {
     "no": 2,
@@ -27,7 +35,15 @@
     "activettl": "Wanna hear a pun?",
     "activetxt": "Converts Heart Orbs into Poison Orbs; ATK 2x for 2 turns",
     "cooldown": [15, 9],
-    "awakenings": ["dark-p","skill","skill-res","tpa"]
+    "aw1": "dark-p",
+    "aw2": "skill",
+    "aw3": "skill-res",
+    "aw4": "tpa",
+    "aw5": "",
+    "aw6": "",
+    "aw7": "",
+    "aw8": "",
+    "aw9": "",
   },
   {
     "no": 3,
@@ -42,6 +58,14 @@
     "activettl": "",
     "activetxt": "",
     "cooldown": [1, 1],
-    "awakenings": []
+    "aw1": "",
+    "aw2": "",
+    "aw3": "",
+    "aw4": "",
+    "aw5": "",
+    "aw6": "",
+    "aw7": "",
+    "aw8": "",
+    "aw9": "",
   }
 ]
