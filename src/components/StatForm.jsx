@@ -74,7 +74,6 @@ class StatForm extends Component {
   }
 
   handleChange(property, event) {
-    debugger
     this.setState({
       [property]: event.target.value,
     });
