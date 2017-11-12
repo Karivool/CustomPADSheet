@@ -2,12 +2,12 @@ var express = require('express');
 var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
-var port = process.env.API_PORT || 4200;
+var port = 4200 || process.env.API_PORT;
 var cors = require('cors');
 
 // Mongoose connection with mongodb
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://karivool:karivool@address.mlab.com:num/custompad')
+mongoose.connect('mongodb://karivool:password@ds155695.mlab.com:55695/custompad')
     .then(() => { // if all is ok we will be here
       console.log('Start');
     })
@@ -17,6 +17,7 @@ mongoose.connect('mongodb://karivool:karivool@address.mlab.com:num/custompad')
     });
 
 // Required application specific custom router module
+var Character = require('./src/models/Char');
 var charRouter = require('./src/routes/charRoutes');
 
 // Use middlewares to set view engine and post json data to the server
