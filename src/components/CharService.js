@@ -5,7 +5,6 @@ import axios from 'axios';
 class CharService {
 
   sendData(data) {
-    debugger
     axios.post('http://localhost:4200/chars/add/post', {
     char: data
   })
