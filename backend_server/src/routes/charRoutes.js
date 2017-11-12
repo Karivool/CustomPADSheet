@@ -7,7 +7,12 @@ var Char = require('../models/Char');
 
 // Defined store route
 charRouter.route('/add/post').post(function (req, res) {
-  var char = new Char(req.body);
+  console.log("req.body:")
+  console.log(req.body.char);
+  var char = new Char(req.body.char);
+  console.log("");
+  console.log("char:")
+  console.log(char);
       char.save()
     .then(char => {
     res.status(200).json({Char: 'Char added successfully'});
