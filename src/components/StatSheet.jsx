@@ -29,7 +29,7 @@ class StatSheet extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:3000/chars')
+    axios.get('http://localhost:4200/chars')
     .then(response => {
       this.setState({ chars: response.data });
     })
@@ -39,7 +39,7 @@ class StatSheet extends Component {
   }
 
   render() {
-    const characters = [];
+    const characters = this.state.chars;
     const charsIsEmpty = characters.length === 0;
     const charsIsntEmpty = characters.length >= 1;
 
@@ -50,14 +50,7 @@ class StatSheet extends Component {
           {charsIsntEmpty && <div className="">
 
             { characters.map(function(info, idx) {
-
-              if (info.data === undefined) {
-                let infoCharacters = {charName: info.charName};
-                reqChar(infoCharacters, info.charName);
-              } else {
                 return (<StatLine key={idx} idx={idx} info={info}/>);
-              }
-
               })
             }
             </div>

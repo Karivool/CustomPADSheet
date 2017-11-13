@@ -30,10 +30,10 @@ class StatForm extends Component {
       atk: "",
       rcv: "",
       weighted: 0,
-      leader: "",
-      leaderdesc: "",
-      active: "",
-      activedesc: "",
+      leaderttl: "",
+      leadertxt: "",
+      activettl: "",
+      activetxt: "",
       aw1: "",
       aw2: "",
       aw3: "",
@@ -43,6 +43,8 @@ class StatForm extends Component {
       aw7: "",
       aw8: "",
       aw9: "",
+      cooldownmax: "",
+      cooldownmin: "",
     };
     this.addCharService = new CharService();
     this.handleChange = this.handleChange.bind(this);
@@ -61,16 +63,17 @@ class StatForm extends Component {
     if (this.state.atk === "") {
       atk = 0;
     } else {
-      atk = this.state.atk / 5
+      atk = this.state.atk / 5;
     }
     if (this.state.rcv === "") {
       rcv = 0;
     } else {
-      rcv = this.state.rcv / 3
+      rcv = this.state.rcv / 3;
     }
     this.setState({
       weighted: (hp + atk + rcv).toFixed(2),
     });
+
   }
 
   handleChange(property, event) {
@@ -168,10 +171,13 @@ class StatForm extends Component {
           ATK: <input type="number" maxLength="5" value={this.state.atk} onChange={this.handleChange.bind(this, "atk")} className="statform-form-number"/>
           RCV: <input type="number" maxLength="5" value={this.state.rcv} onChange={this.handleChange.bind(this, "rcv")} className="statform-form-number"/>
           Weighted: {this.state.weighted}<br/>
-          Leader Skill: <input type="text" value={this.state.leader} onChange={this.handleChange.bind(this, "leader")} className="statform-form-text"/><br/>
-          Description:  <input type="text" value={this.state.leaderdesc} onChange={this.handleChange.bind(this, "leaderdesc")} className="statform-form-text"/><br/>
-          Active Skill: <input type="text" value={this.state.active} onChange={this.handleChange.bind(this, "active")} className="statform-form-text"/><br/>
-          Description:  <input type="text" value={this.state.activedesc} onChange={this.handleChange.bind(this, "activedesc")} className="statform-form-text"/><br/>
+          Leader Skill: <input type="text" value={this.state.leaderttl} onChange={this.handleChange.bind(this, "leaderttl")} className="statform-form-text"/><br/>
+          Description:  <input type="text" value={this.state.leadertxt} onChange={this.handleChange.bind(this, "leadertxt")} className="statform-form-text"/><br/>
+          Active Skill: <input type="text" value={this.state.activettl} onChange={this.handleChange.bind(this, "activettl")} className="statform-form-text"/><br/>
+          Description:  <input type="text" value={this.state.activetxt} onChange={this.handleChange.bind(this, "activetxt")} className="statform-form-text"/><br/>
+          Cooldown Max:  <input type="number" maxLength="2" value={this.state.cooldownmax} onChange={this.handleChange.bind(this, "cooldownmax")} className="statform-form-number"/>
+          Cooldown Min:  <input type="number" maxLength="2" value={this.state.cooldownmin} onChange={this.handleChange.bind(this, "cooldownmin")} className="statform-form-number"/><br/>
+
           Awakenings:
             { options.map((option) => {
                 return (<ImageSelect
