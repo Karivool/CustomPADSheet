@@ -1,0 +1,15 @@
+module.exports = {
+    '':  '',
+	  'attacker': '/images/types/ATKR.png',
+    'balanced': '/images/types/BAL.png',
+    'dragon': '/images/types/DRGN.png',
+    'devil': '/images/types/DVL.png',
+    'god': '/images/types/GOD.png',
+    'healer': '/images/types/HEAL.png',
+    'machine': '/images/types/MECH.png',
+    'physical': '/images/types/PHYS.png',
+    'awoken': '/images/types/AWK.png',
+    'evo': '/images/types/EVO.png',
+    'enhance': '/images/types/MAT.png',
+    'redeem': '/images/types/RED.png',
+    };
