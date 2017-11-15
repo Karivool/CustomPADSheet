@@ -9,14 +9,6 @@ class StatLine extends Component {
     const ELEMENTS = require('../constants/elements.js');
 
     let info = this.props.info;
-    debugger
-    info.type1 = TYPES[info.type1];
-    info.type2 = TYPES[info.type2];
-    info.type3 = TYPES[info.type3];
-
-    info.el1 = ELEMENTS[info.el1];
-    info.el2 = ELEMENTS[info.el2];
-
     info.aw1 = AWAKES[info.aw1];
     info.aw2 = AWAKES[info.aw2];
     info.aw3 = AWAKES[info.aw3];
@@ -26,11 +18,23 @@ class StatLine extends Component {
     info.aw7 = AWAKES[info.aw7];
     info.aw8 = AWAKES[info.aw8];
     info.aw9 = AWAKES[info.aw9];
+    info.el1 = ELEMENTS[info.el1];
+    info.el2 = ELEMENTS[info.el2];
+    info.type1 = TYPES[info.type1];
+    info.type2 = TYPES[info.type2];
+    info.type3 = TYPES[info.type3];
+    let weight = (info.hp/10 + info.atk/5 + info.rcv/3).toFixed(2)
+    let cooldown
+    if (info.cooldownmax === 0) {
+      cooldown = ""
+    } else {
+      cooldown = `${info.cooldownmax} (${info.cooldownmin})`
+    }
 
     return (
       <div className="statline">
         <div className="statshow-name">{info.name}</div>
-        <div className="statshow-rarity">{info.rare}</div>
+        <div className="statshow-rare">{info.rare}</div>
         <div className="statshow-cost">{info.cost}</div>
         <div className="statshow-element">
           <img className="statshow-img" src={info.el1}></img>
@@ -50,12 +54,12 @@ class StatLine extends Component {
         <div className="statshow-hp">{info.hp}</div>
         <div className="statshow-atk">{info.atk}</div>
         <div className="statshow-rcv">{info.rcv}</div>
-        <div className="statshow-weighted">Weighted</div>
+        <div className="statshow-weighted">{weight}</div>
         <div className="statshow-leader">{info.leaderttl}</div>
         <div className="statshow-description">{info.leadertxt}</div>
         <div className="statshow-active">{info.activettl}</div>
         <div className="statshow-description">{info.activetxt}</div>
-        <div className="statshow-cooldown">Cooldown</div>
+        <div className="statshow-cooldown">{cooldown}</div>
         <div className="statshow-awakenings">
           <img className="statshow-img" src={info.aw1}></img>
           <img className="statshow-img" src={info.aw2}></img>

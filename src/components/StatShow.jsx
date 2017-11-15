@@ -6,7 +6,7 @@ class StatShow extends Component {
     return (
       <div className="statshow-bar">
         <div className="statshow-name">Name</div>
-        <div className="statshow-rarity">Rare</div>
+        <div className="statshow-rare">Rare</div>
         <div className="statshow-cost">Cost</div>
         <div className="statshow-element">El1</div>
         <div className="statshow-element">El2</div>

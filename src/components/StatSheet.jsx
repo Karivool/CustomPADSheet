@@ -44,7 +44,7 @@ class StatSheet extends Component {
     const charsIsntEmpty = characters.length >= 1;
 
     return (
-      <div className="">
+      <div className="statsheet">
         <StatShow/>
           {charsIsEmpty && <StatEmpty/>}
           {charsIsntEmpty && <div className="">

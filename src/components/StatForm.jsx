@@ -19,7 +19,7 @@ class StatForm extends Component {
     super(props);
     this.state = {
       name: "",
-      rarity: "",
+      rare: "",
       cost: "",
       el1: "fire",
       el2: "",
@@ -108,7 +108,7 @@ class StatForm extends Component {
         Add New Character:
         <form onSubmit={this.handleSubmit}>
           Name: <input type="text" value={this.state.name} onChange={this.handleChange.bind(this, "name")} className="statform-form-text"/><br/>
-          Rarity: <input type="number" maxLength="2" value={this.state.rarity} onChange={this.handleChange.bind(this, "rarity")} className="statform-form-number"/>
+          Rare: <input type="number" maxLength="2" value={this.state.rare} onChange={this.handleChange.bind(this, "rare")} className="statform-form-number"/>
           Cost: <input type="number" maxLength="3" value={this.state.cost} onChange={this.handleChange.bind(this, "cost")} className="statform-form-number"/><br/>
         <label>Element1: <select value={ this.state.el1 }className="statform-form-element" onChange={this.handleChange.bind(this, "el1")}>
             <option value="fire">Fire</option>
@@ -178,7 +178,7 @@ class StatForm extends Component {
           Cooldown Max:  <input type="number" maxLength="2" value={this.state.cooldownmax} onChange={this.handleChange.bind(this, "cooldownmax")} className="statform-form-number"/>
           Cooldown Min:  <input type="number" maxLength="2" value={this.state.cooldownmin} onChange={this.handleChange.bind(this, "cooldownmin")} className="statform-form-number"/><br/>
 
-          Awakenings:
+          <div className="statform-awakes">Awakenings:
             { options.map((option) => {
                 return (<ImageSelect
                   key={`${option}-select`}
@@ -187,6 +187,7 @@ class StatForm extends Component {
                 </ImageSelect>);
               })
             }
+            </div>
           <p/>
         <input type="submit" value="Submit" className="statform-submit"/>
         </form>
@@ -195,34 +196,3 @@ class StatForm extends Component {
   }
 }
 export default connect(null, mapDispatchToProps)(StatForm);
-
-// export default reduxForm({
-//   form: 'character',
-//   fields: ['name', 'rarity', 'cost', 'el1', 'el2', 'type1', 'type2', 'type3',
-//            'hp', 'atk', 'rcv', 'leader', 'leaderdesc', 'active', 'activedesc',],
-// })(StatForm);
-
-// name: this.state.name,
-// rarity: this.state.rarity,
-// cost: this.state.cost,
-// el1: this.state.el1,
-// el2: this.state.el2,
-// type1: this.state.type1,
-// type2: this.state.type2,
-// type3: this.state.type3,
-// hp: this.state.hp,
-// atk: this.state.atk,
-// rcv: this.state.rcv,
-// leader: this.state.leader,
-// leaderdesc: this.state.leaderdesc,
-// active: this.state.active,
-// activedesc: this.state.activedesc,
-// aw1: this.state.aw1,
-// aw2: this.state.aw2,
-// aw3: this.state.aw3,
-// aw4: this.state.aw4,
-// aw5: this.state.aw5,
-// aw6: this.state.aw6,
-// aw7: this.state.aw7,
-// aw8: this.state.aw8,
-// aw9: this.state.aw9
