@@ -1,4 +1,4 @@
-.statshow-name, .statshow-rarity, .statshow-cost, .statshow-element,
+.statshow-name, .statshow-rare, .statshow-cost, .statshow-element,
 .statshow-type, .statshow-hp, .statshow-atk, .statshow-rcv, .statshow-weighted,
 .statshow-leader, .statshow-description, .statshow-active, .statshow-cooldown, .statshow-awakenings {
   border: 2px solid;
@@ -8,13 +8,14 @@
   padding-right: 5px;
   padding-bottom: 1px;
   min-height: 18.5px;
+  align-items: center;
 }
 
 .statshow-name {
   min-width: 150px;
   max-width: 150px;
 }
-.statshow-cost, .statshow-rarity {
+.statshow-cost, .statshow-rare {
   min-width: 30px;
   max-width: 30px;
 }
@@ -40,8 +41,8 @@
   max-width: 250px;
 }
 .statshow-awakenings {
-  min-width: 162px;
-  max-width: 162px;
+  min-width: 171px;
+  max-width: 171px;
   min-height: 18.5px;
 }
 .statshow-cooldown {
@@ -134,12 +135,15 @@
 }
 
 .statshow-img {
-  width: 17px;
+  width: 19px;
   float: left;
 }
 
 .statline {
+  color: #2f3d7b;
+  display: flex;
   float:left;
-  width: 150%;
+  font-family: 'Concert One', cursive;
   max width: 200%;
+  width: 150%;
 }
