@@ -13,37 +13,35 @@
   min-width: 150px;
   max-width: 150px;
 }
-.statshow-rarity {
-  min-width: 40px;
-  max-width: 40px;
-}
-.statshow-cost {
+.statshow-cost, .statshow-rarity {
   min-width: 30px;
   max-width: 30px;
 }
-.statshow-element {
-  min-width: 35px;
-  max-width: 35px;
-}
-.statshow-type {
-  min-width: 45px;
-  max-width: 45px;
+.statshow-type, .statshow-element {
+  min-width: 25px;
+  max-width: 25px;
+  min-height: 18.5px;
 }
 .statshow-hp, .statshow-atk, .statshow-rcv {
   min-width: 35px;
-  max-width: 45px;
+  max-width: 35px;
 }
 .statshow-weighted {
-  min-width: 64px;
-  max-width: 64px;
+  min-width: 50px;
+  max-width: 50px;
 }
 .statshow-leader, .statshow-active {
   min-width: 200px;
   max-width: 200px;
 }
 .statshow-description {
-  min-width: 200px;
-  max-width: 200px;
+  min-width: 250px;
+  max-width: 250px;
+}
+.statshow-awakenings {
+  min-width: 162px;
+  max-width: 162px;
+  min-height: 18.5px;
 }
 
 .statshow-bar {
@@ -130,7 +128,13 @@
   width: 25px;
 }
 
+.statshow-img {
+  width: 17px;
+  float: left;
+}
+
 .statline {
   float:left;
-  width: 200%;
+  width: 150%;
+  max width: 200%;
 }
