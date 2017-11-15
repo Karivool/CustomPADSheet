@@ -2,19 +2,51 @@
 import React, { Component } from 'react';
 
 class StatLine extends Component {
+
   render() {
-    const info = this.props.info;
+    const AWAKES = require('../constants/awakenings.js');
+    const TYPES = require('../constants/types.js');
+    const ELEMENTS = require('../constants/elements.js');
+
+    let info = this.props.info;
     debugger
+    info.type1 = TYPES[info.type1];
+    info.type2 = TYPES[info.type2];
+    info.type3 = TYPES[info.type3];
+
+    info.el1 = ELEMENTS[info.el1];
+    info.el2 = ELEMENTS[info.el2];
+
+    info.aw1 = AWAKES[info.aw1];
+    info.aw2 = AWAKES[info.aw2];
+    info.aw3 = AWAKES[info.aw3];
+    info.aw4 = AWAKES[info.aw4];
+    info.aw5 = AWAKES[info.aw5];
+    info.aw6 = AWAKES[info.aw6];
+    info.aw7 = AWAKES[info.aw7];
+    info.aw8 = AWAKES[info.aw8];
+    info.aw9 = AWAKES[info.aw9];
+
     return (
       <div className="statline">
         <div className="statshow-name">{info.name}</div>
         <div className="statshow-rarity">{info.rare}</div>
         <div className="statshow-cost">{info.cost}</div>
-        <div className="statshow-element">{info.el1}</div>
-        <div className="statshow-element">{info.el2}</div>
-        <div className="statshow-type">{info.type1}</div>
-        <div className="statshow-type">{info.type2}</div>
-        <div className="statshow-type">{info.type3}</div>
+        <div className="statshow-element">
+          <img className="statshow-img" src={info.el1}></img>
+        </div>
+        <div className="statshow-element">
+          <img className="statshow-img" src={info.el2}></img>
+        </div>
+        <div className="statshow-type">
+          <img className="statshow-img" src={info.type1}></img>
+        </div>
+        <div className="statshow-type">
+          <img className="statshow-img" src={info.type2}></img>
+        </div>
+        <div className="statshow-type">
+          <img className="statshow-img" src={info.type3}></img>
+        </div>
         <div className="statshow-hp">{info.hp}</div>
         <div className="statshow-atk">{info.atk}</div>
         <div className="statshow-rcv">{info.rcv}</div>
@@ -24,7 +56,17 @@ class StatLine extends Component {
         <div className="statshow-active">{info.activettl}</div>
         <div className="statshow-description">{info.activetxt}</div>
         <div className="statshow-cooldown">Cooldown</div>
-        <div className="statshow-awakenings">Awakenings</div>
+        <div className="statshow-awakenings">
+          <img className="statshow-img" src={info.aw1}></img>
+          <img className="statshow-img" src={info.aw2}></img>
+          <img className="statshow-img" src={info.aw3}></img>
+          <img className="statshow-img" src={info.aw4}></img>
+          <img className="statshow-img" src={info.aw5}></img>
+          <img className="statshow-img" src={info.aw6}></img>
+          <img className="statshow-img" src={info.aw7}></img>
+          <img className="statshow-img" src={info.aw8}></img>
+          <img className="statshow-img" src={info.aw9}></img>
+        </div>
       </div>
     )
   }
