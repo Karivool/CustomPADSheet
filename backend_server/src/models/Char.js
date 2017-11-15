@@ -5,7 +5,7 @@ var Schema = mongoose.Schema;
   var Char = new Schema({
     no: { type: Number },
     name: { type: String, default: "" },
-    rare: { type: Number, default: 1 },
+    rarity: { type: Number, default: 1 },
     cost: { type: Number, default: 0 },
     el1: { type: String, default: "fire" },
     el2: { type: String, default: "" },

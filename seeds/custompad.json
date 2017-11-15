@@ -2,7 +2,7 @@
   {
     "no": 1,
     "name": "Pizza Lady",
-    "rare": 5,
+    "rarity": 5,
     "cost": 25,
     "el1": "dark", "el2": "",
     "type1": "devil", "type2": "", "type3": "",
@@ -26,7 +26,7 @@
   {
     "no": 2,
     "name": "Saucy Punster, Pizza Lady",
-    "rare": 6,
+    "rarity": 6,
     "cost": 35,
     "el1": "dark", "el2": "",
     "type1": "devil", "type2": "", "type3": "",
@@ -50,7 +50,7 @@
   {
     "no": 3,
     "name": "",
-    "rare": 1,
+    "rarity": 1,
     "cost": 1,
     "el1": "", "el2": "",
     "type1": "", "type2": "", "type3": "",
