@@ -8,17 +8,11 @@ import StatEmpty from './StatEmpty';
 import StatLine from './StatLine';
 import StatShow from './StatShow';
 
-import { reqChar } from '../actions/char_actions.js';
-
 const mapStateToProps = state => {
   return {
     ...state
   }
 }
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-
-}, dispatch);
 
 class StatSheet extends Component {
   constructor(props) {
