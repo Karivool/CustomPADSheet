@@ -1,12 +1,9 @@
 // Create a new character from here
 import React, { Component } from 'react';
-import Select from 'react-select';
 import CharService from './CharService';
 import ImageSelect from './ImageSelect';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { reduxForm } from 'redux-form';
 
 import { addChar } from '../actions/char_actions.js';
 
