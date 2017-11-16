@@ -25,7 +25,7 @@ class StatLine extends Component {
     info.type3 = TYPES[info.type3];
     let weight = (info.hp/10 + info.atk/5 + info.rcv/3).toFixed(2)
     let cooldown
-    if (info.cooldownmax === 0) {
+    if (info.cooldownmax === 0 || info.cooldownmax === null) {
       cooldown = ""
     } else {
       cooldown = `${info.cooldownmax} (${info.cooldownmin})`
@@ -37,19 +37,19 @@ class StatLine extends Component {
         <div className="statshow-rare">{info.rare}</div>
         <div className="statshow-cost">{info.cost}</div>
         <div className="statshow-element">
-          <img className="statshow-img" src={info.el1}></img>
+          <img className="statshow-img" alt="" src={info.el1}></img>
         </div>
         <div className="statshow-element">
-          <img className="statshow-img" src={info.el2}></img>
+          <img className="statshow-img" alt="" src={info.el2}></img>
         </div>
         <div className="statshow-type">
-          <img className="statshow-img" src={info.type1}></img>
+          <img className="statshow-img" alt="" src={info.type1}></img>
         </div>
         <div className="statshow-type">
-          <img className="statshow-img" src={info.type2}></img>
+          <img className="statshow-img" alt="" src={info.type2}></img>
         </div>
         <div className="statshow-type">
-          <img className="statshow-img" src={info.type3}></img>
+          <img className="statshow-img" alt="" src={info.type3}></img>
         </div>
         <div className="statshow-hp">{info.hp}</div>
         <div className="statshow-atk">{info.atk}</div>
@@ -61,15 +61,15 @@ class StatLine extends Component {
         <div className="statshow-description">{info.activetxt}</div>
         <div className="statshow-cooldown">{cooldown}</div>
         <div className="statshow-awakenings">
-          <img className="statshow-img" src={info.aw1}></img>
-          <img className="statshow-img" src={info.aw2}></img>
-          <img className="statshow-img" src={info.aw3}></img>
-          <img className="statshow-img" src={info.aw4}></img>
-          <img className="statshow-img" src={info.aw5}></img>
-          <img className="statshow-img" src={info.aw6}></img>
-          <img className="statshow-img" src={info.aw7}></img>
-          <img className="statshow-img" src={info.aw8}></img>
-          <img className="statshow-img" src={info.aw9}></img>
+          <img className="statshow-img" alt="" src={info.aw1}></img>
+          <img className="statshow-img" alt="" src={info.aw2}></img>
+          <img className="statshow-img" alt="" src={info.aw3}></img>
+          <img className="statshow-img" alt="" src={info.aw4}></img>
+          <img className="statshow-img" alt="" src={info.aw5}></img>
+          <img className="statshow-img" alt="" src={info.aw6}></img>
+          <img className="statshow-img" alt="" src={info.aw7}></img>
+          <img className="statshow-img" alt="" src={info.aw8}></img>
+          <img className="statshow-img" alt="" src={info.aw9}></img>
         </div>
       </div>
     )
