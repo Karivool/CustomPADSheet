@@ -1,5 +1,4 @@
 // CharService.js
-import React from 'react';
 import axios from 'axios';
 
 class CharService {
@@ -8,7 +7,7 @@ class CharService {
     axios.post('http://localhost:4200/chars/add/post', {
     char: data
   })
-  .then(res => this.setState({ chars: res.data }))
+  .then(res => console.log(res.data))
   .catch(err => console.log(err))
 }
 
