@@ -1,7 +1,16 @@
 //One PAD character entry
 import React, { Component } from 'react';
+import CharService from './CharService';
 
 class StatLine extends Component {
+  constructor(props) {
+      super(props);
+      this.addCharService = new CharService();
+  }
+
+  delete() {
+    this.addCharService.deleteData(this.props.info._id);
+  }
 
   render() {
     const AWAKES = require('../constants/awakenings.js');
@@ -71,6 +80,8 @@ class StatLine extends Component {
           <img className="statshow-img" alt="" src={info.aw8}></img>
           <img className="statshow-img" alt="" src={info.aw9}></img>
         </div>
+        <div className="statshow-edit"><img className="statshow-img-i" src="/images/edit.png"></img></div>
+        <div className="statshow-delete"><img className="statshow-img-i" src="/images/trash.png" onClick={this.delete.bind(this)}></img></div>
       </div>
     )
   }

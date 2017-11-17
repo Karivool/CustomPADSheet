@@ -1,13 +1,15 @@
 // CharService.js
 import axios from 'axios';
 
+import { addChar } from '../actions/char_actions.js';
+
 class CharService {
 
   sendData(data) {
     axios.post('http://localhost:4200/chars/add/post', {
     char: data
   })
-  .then(res => console.log(res.data))
+  .then(res => addChar())
   .catch(err => console.log(err))
 }
 
