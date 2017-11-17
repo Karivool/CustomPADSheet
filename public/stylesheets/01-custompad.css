@@ -152,3 +152,16 @@
 .statshow-img-i {
   cursor: pointer;
 }
+
+.mainpage-button {
+  background: #e7f6fd;
+  border: 5px solid #5dabfb;
+  border-radius: 10px;
+  color: #2f3d7b;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Concert One', cursive;
+  margin: 5px;
+  padding: 5px;
+  width: max-content;
+}
