@@ -3,18 +3,15 @@ import merge from 'lodash/merge';
 
 const defaultState = {
   chars: [],
+  formOpened: false,
 };
 
 const CharReducer = (state = defaultState, action) => {
   switch(action.type) {
     case Action.ADD_CHAR: {
-      let charName = action.info.charName;
+      debugger
       let char = action.info.char;
       let updatedChars = state.char;
-      if (char.charName === undefined) {
-        char.charName = charName;
-        updatedChars = updatedChars.concat(char);
-      }
       let updatedData = state.data.concat(action.info.data);
       return Object.assign({}, state, { char: updatedChars,
                                         data: updatedData });
@@ -33,6 +30,10 @@ const CharReducer = (state = defaultState, action) => {
       return Object.assign({}, state, { char: updatedChars,
                                         data: updatedData});
     }
+    case Action.OPEN_FORM:
+      return Object.assign({}, state, { formOpened: true });
+    case Action.CLOSE_FORM:
+      return Object.assign({}, state, { formOpened: false });
     default:
       return state;
   }

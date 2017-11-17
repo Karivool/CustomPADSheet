@@ -5,6 +5,9 @@ export const GET_CHARS = "GET_CHARS";
 export const KILL_CHAR = "KILL_CHAR";
 export const EDIT_CHAR = "EDIT_CHARS";
 export const STOP_EDITING = "STOP_EDITING";
+export const OPEN_FORM = "OPEN_FORM";
+export const CLOSE_FORM = "CLOSE_FORM";
+
 
 export const addChar = (charData) => (dispatch) => {
   return createChar(charData)
@@ -29,3 +32,11 @@ export const editChars = () => ({
 export const stopEditing = () => ({
   type: STOP_EDITING
 });
+
+export const openForm = () => ({
+  type: OPEN_FORM
+})
+
+export const closeForm = () => ({
+  type: CLOSE_FORM
+})
