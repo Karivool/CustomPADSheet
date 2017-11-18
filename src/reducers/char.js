@@ -16,23 +16,20 @@ const CharReducer = (state = defaultState, action) => {
     }
     case Action.GET_CHARS: {
       let chars = action.info.charData;
-      debugger
       return Object.assign({}, state, { chars: chars });
     }
     case Action.KILL_CHAR: {
-      debugger
-      let idx = action.idx;
+      let id = action.idx;
+      let updatedChars;
 
-      let left = state.char.slice(0, idx);
-      let right = state.char.slice(idx + 1, state.char.length);
-      let updatedChars = left.concat(right);
-
-      left = state.data.slice(0, idx);
-      right = state.data.slice(idx + 1, state.data.length);
-      let updatedData = left.concat(right);
-
-      return Object.assign({}, state, { char: updatedChars,
-                                        data: updatedData});
+      for (var i = 0; i < state.chars.length; i++) {
+        if (state.chars[i]._id === id) {
+          let left = state.chars.slice(0, i);
+          let right = state.chars.slice(i + 1, state.chars.length);
+          updatedChars = left.concat(right);
+        }
+      }
+      return Object.assign({}, state, { chars: updatedChars});
     }
     case Action.OPEN_FORM:
       return Object.assign({}, state, { formOpened: true });
