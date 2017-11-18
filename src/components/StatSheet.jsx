@@ -8,11 +8,17 @@ import StatEmpty from './StatEmpty';
 import StatLine from './StatLine';
 import StatShow from './StatShow';
 
+import { getChars } from '../actions/char_actions.js';
+
 const mapStateToProps = state => {
   return {
     ...state
   }
 }
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  getChars
+}, dispatch);
 
 class StatSheet extends Component {
   constructor(props) {
@@ -24,16 +30,14 @@ class StatSheet extends Component {
 
   componentDidMount(){
     axios.get('http://localhost:4200/chars')
-    .then(response => {
-      this.setState({ chars: response.data });
-    })
+    .then(res => this.props.getChars(res.data))
     .catch(function (error) {
       console.log(error);
     })
   }
 
   render() {
-    const characters = this.state.chars;
+    const characters = this.props.chars.chars;
     const charsIsEmpty = characters.length === 0;
     const charsIsntEmpty = characters.length >= 1;
 
@@ -54,4 +58,4 @@ class StatSheet extends Component {
   }
 }
 
-export default StatSheet;
+export default connect(mapStateToProps, mapDispatchToProps)(StatSheet);
