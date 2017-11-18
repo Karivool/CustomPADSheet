@@ -11,10 +11,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 class StatLine extends Component {
-  constructor(props) {
-      super(props);
-  }
-
   delete() {
     let id = this.props.info._id
     // Need to fix adding then deleting right away
