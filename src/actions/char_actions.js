@@ -1,5 +1,3 @@
-import { createChar } from '../util/statform_util.js';
-
 export const ADD_CHAR = "ADD_CHAR";
 export const GET_CHARS = "GET_CHARS";
 export const KILL_CHAR = "KILL_CHAR";
@@ -9,18 +7,17 @@ export const OPEN_FORM = "OPEN_FORM";
 export const CLOSE_FORM = "CLOSE_FORM";
 
 
-export const addChar = (charData) => (dispatch) => {
-  return createChar(charData)
-    .then((data) => dispatch(reqChar(charData)))
-    .catch((error) => console.log(error));
-};
+export const addChar = (charData) => ({
+  type: ADD_CHAR,
+  info: {charData}
+});
 
-export const reqChar = (charData) => ({
+export const getChars = (charData) => ({
   type: GET_CHARS,
   info: {charData}
 });
 
-export const levelChar = (idx) => ({
+export const killChar = (idx) => ({
   type: KILL_CHAR,
   idx: idx
 });
