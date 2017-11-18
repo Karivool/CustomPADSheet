@@ -1,15 +1,26 @@
 //One PAD character entry
 import React, { Component } from 'react';
-import CharService from './CharService';
+import axios from 'axios';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { killChar } from '../actions/char_actions.js';
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  killChar
+}, dispatch);
 
 class StatLine extends Component {
   constructor(props) {
       super(props);
-      this.addCharService = new CharService();
   }
 
   delete() {
-    this.addCharService.deleteData(this.props.info._id);
+    let id = this.props.info._id
+    // Need to fix adding then deleting right away
+    axios.get('http://localhost:4200/chars/delete/'+id)
+    .then(res => this.props.killChar(id))
+    .catch(err => console.log(err))
   }
 
   render() {
@@ -80,11 +91,11 @@ class StatLine extends Component {
           <img className="statshow-img" alt="" src={info.aw8}></img>
           <img className="statshow-img" alt="" src={info.aw9}></img>
         </div>
-        <div className="statshow-edit"><img className="statshow-img-i" src="/images/edit.png"></img></div>
-        <div className="statshow-delete"><img className="statshow-img-i" src="/images/trash.png" onClick={this.delete.bind(this)}></img></div>
+        <div className="statshow-edit"><img className="statshow-img-i" src="/images/edit.png" alt="edit"></img></div>
+        <div className="statshow-delete"><img className="statshow-img-i" src="/images/trash.png" alt="trash" onClick={this.delete.bind(this)}></img></div>
       </div>
     )
   }
 }
 
-export default StatLine;
+export default connect(null, mapDispatchToProps)(StatLine);
