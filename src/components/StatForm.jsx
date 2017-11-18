@@ -1,7 +1,7 @@
 // Create a new character from here
 import React, { Component } from 'react';
-import CharService from './CharService';
 import ImageSelect from './ImageSelect';
+import axios from 'axios';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
@@ -43,9 +43,16 @@ class StatForm extends Component {
       cooldownmax: "",
       cooldownmin: "",
     };
-    this.addCharService = new CharService();
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  sendData(data) {
+    axios.post('http://localhost:4200/chars/add/post', {
+    char: data
+  })
+  .then(res => this.props.addChar(data))
+  .catch(err => console.log(err))
   }
 
   calcWeight() {
@@ -89,10 +96,9 @@ class StatForm extends Component {
   }
 
   handleSubmit(event) {
-    console.log(this.state);
     event.preventDefault();
     // this.props.addChar(this.state);
-    this.addCharService.sendData(
+    this.sendData(
       this.state
     );
   }
