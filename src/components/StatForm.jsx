@@ -51,7 +51,7 @@ class StatForm extends Component {
     axios.post('http://localhost:4200/chars/add/post', {
     char: data
   })
-  .then(res => this.props.addChar(data))
+  .then(res => this.props.addChar(res.data))
   .catch(err => console.log(err))
   }
 
