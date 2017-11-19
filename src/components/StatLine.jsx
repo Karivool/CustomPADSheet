@@ -12,7 +12,6 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 class StatLine extends Component {
   delete() {
-    debugger
     let id = this.props.info._id
     axios.get('http://localhost:4200/chars/delete/'+id)
     .then(res => this.props.killChar(id))
@@ -25,7 +24,6 @@ class StatLine extends Component {
     const ELEMENTS = require('../constants/elements.js');
 
     let info = this.props.info;
-    console.log(info);
     info.aw1 = AWAKES[info.aw1];
     info.aw2 = AWAKES[info.aw2];
     info.aw3 = AWAKES[info.aw3];
