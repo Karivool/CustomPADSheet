@@ -15,7 +15,7 @@ charRouter.route('/add/post').post(function (req, res) {
   console.log(char);
       char.save()
     .then(char => {
-    res.status(200).json({Char: 'Char added successfully'});
+    res.status(200).json({char});
     })
     .catch(err => {
     res.status(400).send("unable to save to database");
