@@ -9,7 +9,7 @@ const defaultState = {
 const CharReducer = (state = defaultState, action) => {
   switch(action.type) {
     case Action.ADD_CHAR: {
-      let char = action.info.charData;
+      let char = action.info.charData.char;
       let updatedChars = state.chars;
       let updatedData = updatedChars.concat(char);
       return Object.assign({}, state, { chars: updatedData });
