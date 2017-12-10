@@ -29,7 +29,7 @@ class StatSheet extends Component {
   }
 
   componentDidMount(){
-    axios.get('http://localhost:4200/chars')
+    axios.get('/chars')
     .then(res => this.props.getChars(res.data))
     .catch(function (error) {
       console.log(error);

@@ -23,7 +23,7 @@ class CharService extends Component {
   }
 
   sendData(data) {
-    axios.post('http://localhost:4200/chars/add/post', {
+    axios.post('/chars/add/post', {
     char: data
   })
   .then(res => this.addChar(data).bind(this))
@@ -31,7 +31,7 @@ class CharService extends Component {
 }
 
   updateData(data, id){
-    axios.post('http://localhost:4200/chars/update/'+id, {
+    axios.post('/chars/update/'+id, {
       item: data
     })
     .then(res => this.setState({ chars: res.data }))
@@ -39,7 +39,7 @@ class CharService extends Component {
   }
 
   deleteData(id){
-    axios.get('http://localhost:4200/chars/delete/'+id)
+    axios.get('/chars/delete/'+id)
     .then().catch(err => console.log(err))
   }
 }

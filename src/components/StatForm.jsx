@@ -48,7 +48,7 @@ class StatForm extends Component {
   }
 
   sendData(data) {
-    axios.post('http://localhost:4200/chars/add/post', {
+    axios.post('/chars/add/post', {
     char: data
   })
   .then(res => this.props.addChar(res.data))
