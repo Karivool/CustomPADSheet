@@ -29,7 +29,12 @@ class StatSheet extends Component {
   }
 
   componentDidMount(){
-    axios.get('/chars')
+    let base = process.env.baseURL || "http://localhost:4200";
+
+    return axios({
+      method: "get",
+      url: base + "/chars",
+    })
     .then(res => this.props.getChars(res.data))
     .catch(function (error) {
       console.log(error);

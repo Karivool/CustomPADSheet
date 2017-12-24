@@ -12,8 +12,13 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 class StatLine extends Component {
   delete() {
+    let base = process.env.baseURL || "http://localhost:4200";
     let id = this.props.info._id
-    axios.get('/chars/delete/'+id)
+
+    return axios({
+      method: "get",
+      url: base + '/chars/delete/' + id,
+    })
     .then(res => this.props.killChar(id))
     .catch(err => console.log(err))
   }
