@@ -1,2 +1,2 @@
 web: npm start
-web: cd backend_server && npm start
+web: sh -c 'cdbackend_server && npm start'
