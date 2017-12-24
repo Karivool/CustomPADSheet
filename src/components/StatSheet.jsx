@@ -29,6 +29,7 @@ class StatSheet extends Component {
   }
 
   componentDidMount(){
+    console.log(process.env);
     let base = process.env.baseURL || "http://localhost:4200";
 
     return axios({
