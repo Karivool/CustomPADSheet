@@ -1,2 +1,2 @@
 web: npm start
-worker: sh -c 'cdbackend_server && npm start'
+api: sh -c 'cd backend_server && npm start'
