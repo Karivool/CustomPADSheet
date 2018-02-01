@@ -30,8 +30,8 @@ class StatSheet extends Component {
 
   componentDidMount(){
     let base = process.env.baseURL || "http://localhost:4200";
-    console.log(process.env.baseURL);
-    
+    console.log(process.env);
+
     return axios({
       method: "get",
       url: base + "/chars",
