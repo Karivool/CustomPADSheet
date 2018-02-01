@@ -48,7 +48,7 @@ class StatForm extends Component {
   }
 
   sendData(data) {
-    let base = "http://custompadsheet.herokuapp.com/" || "http://localhost:4200";
+    let base = "http://custompadsheet.herokuapp.com" || "http://localhost:4200";
     axios.post(base + '/chars/add/post', {
     char: data
   })
