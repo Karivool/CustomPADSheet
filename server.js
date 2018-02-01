@@ -4,7 +4,7 @@ var bodyParser = require('body-parser');
 
 var app = express();
 var router = express.Router();
-var port = process.env.API_PORT || 3000;
+var port = process.env.PORT || 3000;
 var cors = require('cors');
 
 var Character = require('./src/models/Char');
