@@ -165,3 +165,11 @@
   padding: 5px;
   width: max-content;
 }
+
+.Select-menu {
+  min-height: 500px;
+}
+
+.Select-menu-outer {
+  min-height: 500px;
+}
