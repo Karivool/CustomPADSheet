@@ -29,7 +29,7 @@ class StatSheet extends Component {
   }
 
   componentDidMount(){
-    let base = "http://custompadsheet.herokuapp.com" || "http://localhost:4200";
+    let base = process.env.baseURL || "http://localhost:4200";
     console.log(process.env);
 
     return axios({

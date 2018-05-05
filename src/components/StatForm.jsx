@@ -26,7 +26,7 @@ class StatForm extends Component {
       hp: "",
       atk: "",
       rcv: "",
-      weighted: 0,
+      weighted: 0.0,
       leaderttl: "",
       leadertxt: "",
       activettl: "",
@@ -48,7 +48,7 @@ class StatForm extends Component {
   }
 
   sendData(data) {
-    let base = "http://custompadsheet.herokuapp.com" || "http://localhost:4200";
+    let base = process.env.baseURL || "http://localhost:4200";
     axios.post(base + '/chars/add/post', {
     char: data
   })
@@ -78,16 +78,10 @@ class StatForm extends Component {
     this.setState({
       weighted: (hp + atk + rcv).toFixed(2),
     });
-
   }
 
   handleChange(property, event) {
-    if (property === "hp" || property === "atk" || property === "rcv") {
-      this.calcWeight();
-    }
-    this.setState({
-      [property]: event.target.value,
-    });
+    this.setState({[property]: event.target.value}, this.calcWeight());
   }
 
   handleAwakening(property, value) {

@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 
 class StatLine extends Component {
   delete() {
-    let base = "http://custompadsheet.herokuapp.com" || "http://localhost:4200";
+    let base = process.env.baseURL || "http://localhost:4200";
     let id = this.props.info._id
 
     return axios({
