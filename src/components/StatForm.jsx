@@ -23,9 +23,9 @@ class StatForm extends Component {
       type1: "attacker",
       type2: "",
       type3: "",
-      hp: "",
-      atk: "",
-      rcv: "",
+      hp: 0,
+      atk: 0,
+      rcv: 0,
       weighted: 0.0,
       leaderttl: "",
       leadertxt: "",
@@ -56,32 +56,36 @@ class StatForm extends Component {
   .catch(err => console.log(err))
   }
 
-  calcWeight() {
-    let hp;
-    let atk;
-    let rcv;
-    if (this.state.hp === "") {
-      hp = 0;
-    } else {
-      hp = this.state.hp / 10;
+  calcWeight(stat, value) {
+    let hp = this.state.hp;
+    let atk = this.state.atk;
+    let rcv = this.state.rcv;
+    value = parseInt(value);
+
+    if (stat === "hp") {
+      hp = value;
+    } else if (stat === "atk") {
+      atk = value;
+    } else if (stat === "rcv") {
+      rcv = value;
     }
-    if (this.state.atk === "") {
-      atk = 0;
-    } else {
-      atk = this.state.atk / 5;
-    }
-    if (this.state.rcv === "") {
-      rcv = 0;
-    } else {
-      rcv = this.state.rcv / 3;
+
+    if (isNaN(value)) {
+      if (stat === "hp") {
+        hp = 0;
+      } else if (stat === "atk") {
+        atk = 0;
+      } else if (stat === "rcv") {
+        rcv = 0;
+      }
     }
     this.setState({
-      weighted: (hp + atk + rcv).toFixed(2),
+      weighted: (parseFloat(hp / 10) + parseFloat(atk / 5) + parseFloat(rcv / 3)).toFixed(2),
     });
   }
 
   handleChange(property, event) {
-    this.setState({[property]: event.target.value}, this.calcWeight());
+    this.setState({[property]: event.target.value}, this.calcWeight(property, event.target.value));
   }
 
   handleAwakening(property, value) {
